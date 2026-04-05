@@ -789,7 +789,7 @@
             color: var(--success);
             font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -799,6 +799,16 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .explanation .urdu-text {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border-color);
+            font-style: italic;
         }
 
         /* Navigation Buttons */
@@ -842,7 +852,6 @@
         /* Result Screen */
         .result-screen {
             display: none;
-            text-align: center;
         }
 
         .result-card {
@@ -1048,6 +1057,14 @@
             line-height: 1.5;
             padding-top: 12px;
             border-top: 1px solid var(--border-color);
+        }
+
+        .review-urdu {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-top: 8px;
+            font-style: italic;
         }
 
         /* Footer */
@@ -1387,6 +1404,7 @@
                     <div class="explanation" id="explanation">
                         <h4>✅ Correct Answer!</h4>
                         <p id="explanationText"></p>
+                        <p class="urdu-text" id="explanationUrdu"></p>
                     </div>
                 </div>
 
@@ -1493,85 +1511,554 @@
         // ==================== QUESTIONS DATA ====================
         const allQuestions = [
             // Topic 1: Computer Fundamentals (10 questions)
-            { id: 1, topic: "Computer Fundamentals", topicId: 1, question: "The device that converts hard copy into soft copy is called:", options: ["Printer", "Scanner", "Monitor", "Keyboard"], correct: 1, explanation: "A scanner converts physical documents (hard copy) into digital format (soft copy) by capturing images of the document." },
-            { id: 2, topic: "Computer Fundamentals", topicId: 1, question: "The volatile memory:", options: ["Stores data permanently", "Loses contents when power is disconnected", "Cannot be modified", "Is slower than secondary storage"], correct: 1, explanation: "Volatile memory (like RAM) loses its contents when the power supply is interrupted." },
-            { id: 3, topic: "Computer Fundamentals", topicId: 1, question: "Media players are classified as:", options: ["System software", "Entertainment software", "Utility software", "Programming software"], correct: 1, explanation: "Media players are entertainment software designed to play audio and video files." },
-            { id: 4, topic: "Computer Fundamentals", topicId: 1, question: "Modern programming languages use:", options: ["Assembler", "Compiler", "Machine code", "Binary translator"], correct: 1, explanation: "Modern high-level programming languages use compilers to translate code into machine code." },
-            { id: 5, topic: "Computer Fundamentals", topicId: 1, question: "The inexpensive and most commonly used computers are:", options: ["Mainframe computers", "Super computers", "Micro computers", "Mini computers"], correct: 2, explanation: "Microcomputers (PCs, laptops) are the most affordable and widely used." },
-            { id: 6, topic: "Computer Fundamentals", topicId: 1, question: "A computer cannot start without:", options: ["Microsoft Word", "Operating System", "Internet connection", "Printer"], correct: 1, explanation: "The Operating System is essential software for computer function." },
-            { id: 7, topic: "Computer Fundamentals", topicId: 1, question: "GUI was developed in:", options: ["First generation", "Second generation", "Third generation", "Fourth generation"], correct: 3, explanation: "GUI was developed in the fourth generation of computers (1971-present)." },
-            { id: 8, topic: "Computer Fundamentals", topicId: 1, question: "A person who develops programs using programming languages is called:", options: ["Hardware engineer", "Software engineer", "Network administrator", "Data analyst"], correct: 1, explanation: "A software engineer develops programs using various programming languages." },
-            { id: 9, topic: "Computer Fundamentals", topicId: 1, question: "The program that manages computer resources is:", options: ["Web browser", "Operating System", "Word processor", "Antivirus"], correct: 1, explanation: "The Operating System manages CPU, memory, storage, and all resources." },
-            { id: 10, topic: "Computer Fundamentals", topicId: 1, question: "Wires connecting CPU with main memory to identify locations is:", options: ["Data bus", "Control bus", "Address bus", "System bus"], correct: 2, explanation: "The Address bus carries memory addresses from processor to components." },
+            { 
+                id: 1, topic: "Computer Fundamentals", topicId: 1, 
+                question: "The device that converts hard copy into soft copy is called:", 
+                options: ["Printer", "Scanner", "Monitor", "Keyboard"], 
+                correct: 1, 
+                explanation: "A scanner converts physical documents (hard copy) into digital format (soft copy) by capturing images of the document.",
+                urdu: "Scanner aik aisa device hai jo physical documents (hard copy) ko digital format (soft copy) mein convert karta hai document ki images capture karke."
+            },
+            { 
+                id: 2, topic: "Computer Fundamentals", topicId: 1, 
+                question: "The volatile memory:", 
+                options: ["Stores data permanently", "Loses contents when power is disconnected", "Cannot be modified", "Is slower than secondary storage"], 
+                correct: 1, 
+                explanation: "Volatile memory (like RAM) loses its contents when the power supply is interrupted.",
+                urdu: "Volatile memory (jaise RAM) apna data kho deti hai jab power supply band ho jaye."
+            },
+            { 
+                id: 3, topic: "Computer Fundamentals", topicId: 1, 
+                question: "Media players are classified as:", 
+                options: ["System software", "Entertainment software", "Utility software", "Programming software"], 
+                correct: 1, 
+                explanation: "Media players are entertainment software designed to play audio and video files.",
+                urdu: "Media players entertainment software hain jo audio aur video files chalane ke liye banaye gaye hain."
+            },
+            { 
+                id: 4, topic: "Computer Fundamentals", topicId: 1, 
+                question: "Modern programming languages use:", 
+                options: ["Assembler", "Compiler", "Machine code", "Binary translator"], 
+                correct: 1, 
+                explanation: "Modern high-level programming languages use compilers to translate code into machine code.",
+                urdu: "Modern high-level programming languages compiler use karte hain code ko machine code mein translate karne ke liye."
+            },
+            { 
+                id: 5, topic: "Computer Fundamentals", topicId: 1, 
+                question: "The inexpensive and most commonly used computers are:", 
+                options: ["Mainframe computers", "Super computers", "Micro computers", "Mini computers"], 
+                correct: 2, 
+                explanation: "Microcomputers (PCs, laptops) are the most affordable and widely used.",
+                urdu: "Microcomputers (PCs, laptops) sabse saste aur ziada istemal hone wale computers hain."
+            },
+            { 
+                id: 6, topic: "Computer Fundamentals", topicId: 1, 
+                question: "A computer cannot start without:", 
+                options: ["Microsoft Word", "Operating System", "Internet connection", "Printer"], 
+                correct: 1, 
+                explanation: "The Operating System is essential software for computer function.",
+                urdu: "Operating System zaroori software hai computer ke kaam karne ke liye."
+            },
+            { 
+                id: 7, topic: "Computer Fundamentals", topicId: 1, 
+                question: "GUI was developed in:", 
+                options: ["First generation", "Second generation", "Third generation", "Fourth generation"], 
+                correct: 3, 
+                explanation: "GUI was developed in the fourth generation of computers (1971-present).",
+                urdu: "GUI fourth generation (1971-ab tak) mein develop kiya gaya tha."
+            },
+            { 
+                id: 8, topic: "Computer Fundamentals", topicId: 1, 
+                question: "A person who develops programs using programming languages is called:", 
+                options: ["Hardware engineer", "Software engineer", "Network administrator", "Data analyst"], 
+                correct: 1, 
+                explanation: "A software engineer develops programs using various programming languages.",
+                urdu: "Software engineer wo shakhs hai jo mukhtalif programming languages istemal karke programs banata hai."
+            },
+            { 
+                id: 9, topic: "Computer Fundamentals", topicId: 1, 
+                question: "The program that manages computer resources is:", 
+                options: ["Web browser", "Operating System", "Word processor", "Antivirus"], 
+                correct: 1, 
+                explanation: "The Operating System manages CPU, memory, storage, and all resources.",
+                urdu: "Operating System CPU, memory, storage aur tamam resources ko manage karta hai."
+            },
+            { 
+                id: 10, topic: "Computer Fundamentals", topicId: 1, 
+                question: "Wires connecting CPU with main memory to identify locations is:", 
+                options: ["Data bus", "Control bus", "Address bus", "System bus"], 
+                correct: 2, 
+                explanation: "The Address bus carries memory addresses from processor to components.",
+                urdu: "Address bus processor se components tak memory addresses le kar jata hai."
+            },
 
             // Topic 2: Operating Systems (10 questions)
-            { id: 11, topic: "Operating Systems", topicId: 2, question: "The software which performs all basic tasks is:", options: ["Application software", "Operating System", "Utility software", "Firmware"], correct: 1, explanation: "The OS performs basic tasks like memory management and process handling." },
-            { id: 12, topic: "Operating Systems", topicId: 2, question: "A program that enables user interaction with computer is:", options: ["Compiler", "Interface", "Driver", "Protocol"], correct: 1, explanation: "An interface (GUI or CLI) allows users to interact with the computer." },
-            { id: 13, topic: "Operating Systems", topicId: 2, question: "DOS is an example of:", options: ["Multi-user OS", "Single user OS", "Network OS", "Real-time OS"], correct: 1, explanation: "MS-DOS was designed for one person at a time on a single computer." },
-            { id: 14, topic: "Operating Systems", topicId: 2, question: "The OS that allows frequent task switching is:", options: ["Batch processing", "Time sharing", "Real-time", "Distributed"], correct: 1, explanation: "Time-sharing OS rapidly switches between multiple tasks." },
-            { id: 15, topic: "Operating Systems", topicId: 2, question: "Jobs are executed in a group in which OS?", options: ["Time sharing", "Real-time", "Batch processing", "Distributed"], correct: 2, explanation: "Batch processing systems execute similar jobs as a group." },
-            { id: 16, topic: "Operating Systems", topicId: 2, question: "Which management controls dynamic allocation of resources?", options: ["File management", "Resource management", "User management", "Network management"], correct: 1, explanation: "Resource management allocates CPU, memory, and I/O devices." },
-            { id: 17, topic: "Operating Systems", topicId: 2, question: "Users that can access multi-user OS simultaneously:", options: ["One", "Many", "Two", "Only administrators"], correct: 1, explanation: "Multi-user OS allows many users to access resources simultaneously." },
-            { id: 18, topic: "Operating Systems", topicId: 2, question: "System guaranteeing critical tasks without delay:", options: ["Batch processing", "Soft real-time", "Time sharing", "Hard real-time"], correct: 3, explanation: "Hard real-time systems ensure tasks complete within strict deadlines." },
-            { id: 19, topic: "Operating Systems", topicId: 2, question: "The process of starting OS is called:", options: ["Resource management", "Booting", "Error checking", "File management"], correct: 1, explanation: "Booting loads the OS into main memory when computer starts." },
-            { id: 20, topic: "Operating Systems", topicId: 2, question: "Programs helping office workers do routine tasks:", options: ["Operating system", "Antivirus", "Email", "Office automation"], correct: 3, explanation: "Office automation refers to software like MS Office for office tasks." },
+            { 
+                id: 11, topic: "Operating Systems", topicId: 2, 
+                question: "The software which performs all basic tasks is:", 
+                options: ["Application software", "Operating System", "Utility software", "Firmware"], 
+                correct: 1, 
+                explanation: "The OS performs basic tasks like memory management and process handling.",
+                urdu: "OS basic kaam karta hai jaise memory management aur process handling."
+            },
+            { 
+                id: 12, topic: "Operating Systems", topicId: 2, 
+                question: "A program that enables user interaction with computer is:", 
+                options: ["Compiler", "Interface", "Driver", "Protocol"], 
+                correct: 1, 
+                explanation: "An interface (GUI or CLI) allows users to interact with the computer.",
+                urdu: "Interface (GUI ya CLI) users ko computer ke sath interact karne ki suvidha deta hai."
+            },
+            { 
+                id: 13, topic: "Operating Systems", topicId: 2, 
+                question: "DOS is an example of:", 
+                options: ["Multi-user OS", "Single user OS", "Network OS", "Real-time OS"], 
+                correct: 1, 
+                explanation: "MS-DOS was designed for one person at a time on a single computer.",
+                urdu: "MS-DOS aik waqt mein sirf aik shakhs ke liye aik computer par banaya gaya tha."
+            },
+            { 
+                id: 14, topic: "Operating Systems", topicId: 2, 
+                question: "The OS that allows frequent task switching is:", 
+                options: ["Batch processing", "Time sharing", "Real-time", "Distributed"], 
+                correct: 1, 
+                explanation: "Time-sharing OS rapidly switches between multiple tasks.",
+                urdu: "Time-sharing OS bahut tezi se kai tasks ke darmiyan switch karta hai."
+            },
+            { 
+                id: 15, topic: "Operating Systems", topicId: 2, 
+                question: "Jobs are executed in a group in which OS?", 
+                options: ["Time sharing", "Real-time", "Batch processing", "Distributed"], 
+                correct: 2, 
+                explanation: "Batch processing systems execute similar jobs as a group.",
+                urdu: "Batch processing system milte julte jobs ko aik group mein execute karta hai."
+            },
+            { 
+                id: 16, topic: "Operating Systems", topicId: 2, 
+                question: "Which management controls dynamic allocation of resources?", 
+                options: ["File management", "Resource management", "User management", "Network management"], 
+                correct: 1, 
+                explanation: "Resource management allocates CPU, memory, and I/O devices.",
+                urdu: "Resource management CPU, memory aur I/O devices ko allocate karta hai."
+            },
+            { 
+                id: 17, topic: "Operating Systems", topicId: 2, 
+                question: "Users that can access multi-user OS simultaneously:", 
+                options: ["One", "Many", "Two", "Only administrators"], 
+                correct: 1, 
+                explanation: "Multi-user OS allows many users to access resources simultaneously.",
+                urdu: "Multi-user OS kai users ko aik sath resources access karne ki ijazat deta hai."
+            },
+            { 
+                id: 18, topic: "Operating Systems", topicId: 2, 
+                question: "System guaranteeing critical tasks without delay:", 
+                options: ["Batch processing", "Soft real-time", "Time sharing", "Hard real-time"], 
+                correct: 3, 
+                explanation: "Hard real-time systems ensure tasks complete within strict deadlines.",
+                urdu: "Hard real-time systems zarurat tasks ko waqt par mukammal karne ki guarantee dete hain."
+            },
+            { 
+                id: 19, topic: "Operating Systems", topicId: 2, 
+                question: "The process of starting OS is called:", 
+                options: ["Resource management", "Booting", "Error checking", "File management"], 
+                correct: 1, 
+                explanation: "Booting loads the OS into main memory when computer starts.",
+                urdu: "Booting OS ko main memory mein load karta hai jab computer start hota hai."
+            },
+            { 
+                id: 20, topic: "Operating Systems", topicId: 2, 
+                question: "Programs helping office workers do routine tasks:", 
+                options: ["Operating system", "Antivirus", "Email", "Office automation"], 
+                correct: 3, 
+                explanation: "Office automation refers to software like MS Office for office tasks.",
+                urdu: "Office automation wo software hai jaise MS Office jo office ke kaam ke liye hai."
+            },
 
             // Topic 3: MS Office (7 questions)
-            { id: 21, topic: "MS Office", topicId: 3, question: "Software used for accounting purposes:", options: ["MS Word", "MS Excel", "MS PowerPoint", "MS Access"], correct: 1, explanation: "MS Excel is ideal for accounting and financial calculations." },
-            { id: 22, topic: "MS Office", topicId: 3, question: "Software used to format a document:", options: ["MS Excel", "MS Word", "MS Access", "MS Outlook"], correct: 1, explanation: "MS Word is designed for creating and formatting documents." },
-            { id: 23, topic: "MS Office", topicId: 3, question: "Character that initiates a formula in Excel:", options: ["+ (plus)", "- (minus)", "= (equals)", "* (asterisk)"], correct: 2, explanation: "Every Excel formula must begin with an equals sign (=)." },
-            { id: 24, topic: "MS Office", topicId: 3, question: "Function to rearrange data according to criteria:", options: ["Filtering", "Sorting", "Grouping", "Merging"], correct: 1, explanation: "Sorting arranges data in alphabetical or numerical order." },
-            { id: 25, topic: "MS Office", topicId: 3, question: "To change overall design of Word document, use:", options: ["Styles", "Themes", "Fonts", "Colors"], correct: 1, explanation: "Themes change the overall look including colors and fonts." },
-            { id: 26, topic: "MS Office", topicId: 3, question: "Charts are used to:", options: ["Store data", "Print documents", "Show quantities graphically", "Send emails"], correct: 2, explanation: "Charts convert numerical data into visual representations." },
-            { id: 27, topic: "MS Office", topicId: 3, question: "For automatic table of contents, define:", options: ["Font sizes", "Levels of heading", "Page numbers", "Margins"], correct: 1, explanation: "Word uses Heading styles for Table of Contents." },
+            { 
+                id: 21, topic: "MS Office", topicId: 3, 
+                question: "Software used for accounting purposes:", 
+                options: ["MS Word", "MS Excel", "MS PowerPoint", "MS Access"], 
+                correct: 1, 
+                explanation: "MS Excel is ideal for accounting and financial calculations.",
+                urdu: "MS Excel accounting aur financial calculations ke liye behtar hai."
+            },
+            { 
+                id: 22, topic: "MS Office", topicId: 3, 
+                question: "Software used to format a document:", 
+                options: ["MS Excel", "MS Word", "MS Access", "MS Outlook"], 
+                correct: 1, 
+                explanation: "MS Word is designed for creating and formatting documents.",
+                urdu: "MS Word documents banana aur format karne ke liye banaya gaya hai."
+            },
+            { 
+                id: 23, topic: "MS Office", topicId: 3, 
+                question: "Character that initiates a formula in Excel:", 
+                options: ["+ (plus)", "- (minus)", "= (equals)", "* (asterisk)"], 
+                correct: 2, 
+                explanation: "Every Excel formula must begin with an equals sign (=).",
+                urdu: "Har Excel formula equals sign (=) se shuru hona chahiye."
+            },
+            { 
+                id: 24, topic: "MS Office", topicId: 3, 
+                question: "Function to rearrange data according to criteria:", 
+                options: ["Filtering", "Sorting", "Grouping", "Merging"], 
+                correct: 1, 
+                explanation: "Sorting arranges data in alphabetical or numerical order.",
+                urdu: "Sorting data ko alphabetical ya numerical order mein arrange karta hai."
+            },
+            { 
+                id: 25, topic: "MS Office", topicId: 3, 
+                question: "To change overall design of Word document, use:", 
+                options: ["Styles", "Themes", "Fonts", "Colors"], 
+                correct: 1, 
+                explanation: "Themes change the overall look including colors and fonts.",
+                urdu: "Themes poora design change karte hain jismein colors aur fonts shamil hain."
+            },
+            { 
+                id: 26, topic: "MS Office", topicId: 3, 
+                question: "Charts are used to:", 
+                options: ["Store data", "Print documents", "Show quantities graphically", "Send emails"], 
+                correct: 2, 
+                explanation: "Charts convert numerical data into visual representations.",
+                urdu: "Charts numerical data ko visual tasveer mein tabdeel karte hain."
+            },
+            { 
+                id: 27, topic: "MS Office", topicId: 3, 
+                question: "For automatic table of contents, define:", 
+                options: ["Font sizes", "Levels of heading", "Page numbers", "Margins"], 
+                correct: 1, 
+                explanation: "Word uses Heading styles for Table of Contents.",
+                urdu: "Word Table of Contents ke liye Heading styles use karta hai."
+            },
 
             // Topic 4: Computer Networks (10 questions)
-            { id: 28, topic: "Networks", topicId: 4, question: "Wired media is also called:", options: ["Unguided media", "Directed/Guided media", "Wireless media", "Broadcast media"], correct: 1, explanation: "Wired media guides signals along a physical path (cables)." },
-            { id: 29, topic: "Networks", topicId: 4, question: "A communication system has:", options: ["Three components", "Four components", "Five components", "Six components"], correct: 2, explanation: "Five components: Message, Sender, Receiver, Medium, Protocol." },
-            { id: 30, topic: "Networks", topicId: 4, question: "Physical and logical addresses are:", options: ["Same", "Unique", "Optional", "Temporary"], correct: 1, explanation: "Every device must have unique MAC and IP addresses." },
-            { id: 31, topic: "Networks", topicId: 4, question: "Electrical engineers should join:", options: ["ACM", "IEEE", "ISO", "ANSI"], correct: 1, explanation: "IEEE is the largest association for electrical engineers." },
-            { id: 32, topic: "Networks", topicId: 4, question: "Topology where all devices connect to central hub:", options: ["Bus", "Ring", "Star", "Mesh"], correct: 2, explanation: "Star topology connects all devices to a central hub." },
-            { id: 33, topic: "Networks", topicId: 4, question: "Change in signal shape between sender and receiver:", options: ["Attenuation", "Noise", "Distortion", "Interference"], correct: 2, explanation: "Distortion alters the signal's shape during transmission." },
-            { id: 34, topic: "Networks", topicId: 4, question: "Router determines which data path:", options: ["Longest", "Shortest/Optimal", "Random", "Fixed"], correct: 1, explanation: "Routers find the most efficient path for data packets." },
-            { id: 35, topic: "Networks", topicId: 4, question: "Converting digital to analog signal:", options: ["Demodulation", "Modulation", "Bandwidth", "Multiplexing"], correct: 1, explanation: "Modulation converts digital signals to analog." },
-            { id: 36, topic: "Networks", topicId: 4, question: "Bits used in IPv4 address:", options: ["16", "32", "64", "128"], correct: 1, explanation: "IPv4 uses 32 bits (4 octets × 8 bits)." },
-            { id: 37, topic: "Networks", topicId: 4, question: "Loss of energy in transmission signal:", options: ["Noise", "Distortion", "Jitter", "Attenuation"], correct: 3, explanation: "Attenuation is loss of signal strength over distance." },
+            { 
+                id: 28, topic: "Networks", topicId: 4, 
+                question: "Wired media is also called:", 
+                options: ["Unguided media", "Directed/Guided media", "Wireless media", "Broadcast media"], 
+                correct: 1, 
+                explanation: "Wired media guides signals along a physical path (cables).",
+                urdu: "Wired media signals ko physical path (cables) ke zariye guide karta hai."
+            },
+            { 
+                id: 29, topic: "Networks", topicId: 4, 
+                question: "A communication system has:", 
+                options: ["Three components", "Four components", "Five components", "Six components"], 
+                correct: 2, 
+                explanation: "Five components: Message, Sender, Receiver, Medium, Protocol.",
+                urdu: "Paanch components: Message, Sender, Receiver, Medium, Protocol."
+            },
+            { 
+                id: 30, topic: "Networks", topicId: 4, 
+                question: "Physical and logical addresses are:", 
+                options: ["Same", "Unique", "Optional", "Temporary"], 
+                correct: 1, 
+                explanation: "Every device must have unique MAC and IP addresses.",
+                urdu: "Har device ka MAC aur IP address unique hona chahiye."
+            },
+            { 
+                id: 31, topic: "Networks", topicId: 4, 
+                question: "Electrical engineers should join:", 
+                options: ["ACM", "IEEE", "ISO", "ANSI"], 
+                correct: 1, 
+                explanation: "IEEE is the largest association for electrical engineers.",
+                urdu: "IEEE electrical engineers ke liye sabse bari association hai."
+            },
+            { 
+                id: 32, topic: "Networks", topicId: 4, 
+                question: "Topology where all devices connect to central hub:", 
+                options: ["Bus", "Ring", "Star", "Mesh"], 
+                correct: 2, 
+                explanation: "Star topology connects all devices to a central hub.",
+                urdu: "Star topology mein sab devices central hub se jude hote hain."
+            },
+            { 
+                id: 33, topic: "Networks", topicId: 4, 
+                question: "Change in signal shape between sender and receiver:", 
+                options: ["Attenuation", "Noise", "Distortion", "Interference"], 
+                correct: 2, 
+                explanation: "Distortion alters the signal's shape during transmission.",
+                urdu: "Distortion signal ki shakal ko transmission ke dauran change kar deta hai."
+            },
+            { 
+                id: 34, topic: "Networks", topicId: 4, 
+                question: "Router determines which data path:", 
+                options: ["Longest", "Shortest/Optimal", "Random", "Fixed"], 
+                correct: 1, 
+                explanation: "Routers find the most efficient path for data packets.",
+                urdu: "Router data packets ke liye sabse behtar path dhoondhta hai."
+            },
+            { 
+                id: 35, topic: "Networks", topicId: 4, 
+                question: "Converting digital to analog signal:", 
+                options: ["Demodulation", "Modulation", "Bandwidth", "Multiplexing"], 
+                correct: 1, 
+                explanation: "Modulation converts digital signals to analog.",
+                urdu: "Modulation digital signals ko analog mein convert karta hai."
+            },
+            { 
+                id: 36, topic: "Networks", topicId: 4, 
+                question: "Bits used in IPv4 address:", 
+                options: ["16", "32", "64", "128"], 
+                correct: 1, 
+                explanation: "IPv4 uses 32 bits (4 octets × 8 bits).",
+                urdu: "IPv4 mein 32 bits use hote hain (4 octets × 8 bits)."
+            },
+            { 
+                id: 37, topic: "Networks", topicId: 4, 
+                question: "Loss of energy in transmission signal:", 
+                options: ["Noise", "Distortion", "Jitter", "Attenuation"], 
+                correct: 3, 
+                explanation: "Attenuation is loss of signal strength over distance.",
+                urdu: "Attenuation fasle ke sath signal ki taqat kam hona hai."
+            },
 
             // Topic 5: Cyber Security (10 questions)
-            { id: 38, topic: "Cyber Security", topicId: 5, question: "Broad term for harmful software:", options: ["Virus", "Malware", "Spyware", "Worm"], correct: 1, explanation: "Malware is the umbrella term for all harmful programs." },
-            { id: 39, topic: "Cyber Security", topicId: 5, question: "Software is mostly protected under:", options: ["Patents", "Copyrights", "Trademarks", "Trade secrets"], correct: 1, explanation: "Copyright is standard legal protection for software code." },
-            { id: 40, topic: "Cyber Security", topicId: 5, question: "Authentication allowing only real person to access:", options: ["Password", "PIN", "Biometric", "Token"], correct: 2, explanation: "Biometric verifies unique physical characteristics." },
-            { id: 41, topic: "Cyber Security", topicId: 5, question: "Professional ethics is important because:", options: ["It's a law", "It creates healthy work environment", "It increases salary", "It's mandatory"], correct: 1, explanation: "Ethics create trust and positive work environment." },
-            { id: 42, topic: "Cyber Security", topicId: 5, question: "Free antivirus software often:", options: ["Offers complete protection", "Offers only limited service", "Is better than paid", "Has no ads"], correct: 1, explanation: "Free antivirus provides basic but limited protection." },
-            { id: 43, topic: "Cyber Security", topicId: 5, question: "Virus spreads through:", options: ["Email attachments", "USB drives", "Internet downloads", "All of these"], correct: 3, explanation: "Viruses spread through multiple channels." },
-            { id: 44, topic: "Cyber Security", topicId: 5, question: "Malware replicating without being attached to files:", options: ["Virus", "Trojan", "Worm", "Adware"], correct: 2, explanation: "A worm self-replicates without needing a host file." },
-            { id: 45, topic: "Cyber Security", topicId: 5, question: "Least harmful malware displaying ads:", options: ["Virus", "Spyware", "Adware", "Trojan"], correct: 2, explanation: "Adware only displays ads without major damage." },
-            { id: 46, topic: "Cyber Security", topicId: 5, question: "Copying text without acknowledging author:", options: ["Hacking", "Piracy", "Plagiarism", "Phishing"], correct: 2, explanation: "Plagiarism is using work without proper credit." },
-            { id: 47, topic: "Cyber Security", topicId: 5, question: "'Click to win $5 voucher' is example of:", options: ["Spam", "Phishing", "Malware", "Hacking"], correct: 1, explanation: "Phishing uses deceptive messages to trick people." },
+            { 
+                id: 38, topic: "Cyber Security", topicId: 5, 
+                question: "Broad term for harmful software:", 
+                options: ["Virus", "Malware", "Spyware", "Worm"], 
+                correct: 1, 
+                explanation: "Malware is the umbrella term for all harmful programs.",
+                urdu: "Malware tamam nuqsandeh programs ke liye aam lafz hai."
+            },
+            { 
+                id: 39, topic: "Cyber Security", topicId: 5, 
+                question: "Software is mostly protected under:", 
+                options: ["Patents", "Copyrights", "Trademarks", "Trade secrets"], 
+                correct: 1, 
+                explanation: "Copyright is standard legal protection for software code.",
+                urdu: "Copyright software code ke liye qanooni hifazat ka aam tareeqa hai."
+            },
+            { 
+                id: 40, topic: "Cyber Security", topicId: 5, 
+                question: "Authentication allowing only real person to access:", 
+                options: ["Password", "PIN", "Biometric", "Token"], 
+                correct: 2, 
+                explanation: "Biometric verifies unique physical characteristics.",
+                urdu: "Biometric unique jismani khususiyat ki tasdeeq karta hai."
+            },
+            { 
+                id: 41, topic: "Cyber Security", topicId: 5, 
+                question: "Professional ethics is important because:", 
+                options: ["It's a law", "It creates healthy work environment", "It increases salary", "It's mandatory"], 
+                correct: 1, 
+                explanation: "Ethics create trust and positive work environment.",
+                urdu: "Ethics se bharosa aur acha kaam ka mahol banta hai."
+            },
+            { 
+                id: 42, topic: "Cyber Security", topicId: 5, 
+                question: "Free antivirus software often:", 
+                options: ["Offers complete protection", "Offers only limited service", "Is better than paid", "Has no ads"], 
+                correct: 1, 
+                explanation: "Free antivirus provides basic but limited protection.",
+                urdu: "Free antivirus bunyadi magar mehdood hifazat deta hai."
+            },
+            { 
+                id: 43, topic: "Cyber Security", topicId: 5, 
+                question: "Virus spreads through:", 
+                options: ["Email attachments", "USB drives", "Internet downloads", "All of these"], 
+                correct: 3, 
+                explanation: "Viruses spread through multiple channels.",
+                urdu: "Virus kai tareqon se phailta hai."
+            },
+            { 
+                id: 44, topic: "Cyber Security", topicId: 5, 
+                question: "Malware replicating without being attached to files:", 
+                options: ["Virus", "Trojan", "Worm", "Adware"], 
+                correct: 2, 
+                explanation: "A worm self-replicates without needing a host file.",
+                urdu: "Worm khud apni naqal bana leta hai bina kisi file ki zarurat ke."
+            },
+            { 
+                id: 45, topic: "Cyber Security", topicId: 5, 
+                question: "Least harmful malware displaying ads:", 
+                options: ["Virus", "Spyware", "Adware", "Trojan"], 
+                correct: 2, 
+                explanation: "Adware only displays ads without major damage.",
+                urdu: "Adware sirf ads dikhata hai bina badi nuqsan ke."
+            },
+            { 
+                id: 46, topic: "Cyber Security", topicId: 5, 
+                question: "Copying text without acknowledging author:", 
+                options: ["Hacking", "Piracy", "Plagiarism", "Phishing"], 
+                correct: 2, 
+                explanation: "Plagiarism is using work without proper credit.",
+                urdu: "Plagiarism kaam ko sahi tasdeeq ke bina istemal karna hai."
+            },
+            { 
+                id: 47, topic: "Cyber Security", topicId: 5, 
+                question: "'Click to win $5 voucher' is example of:", 
+                options: ["Spam", "Phishing", "Malware", "Hacking"], 
+                correct: 1, 
+                explanation: "Phishing uses deceptive messages to trick people.",
+                urdu: "Phishing logon ko dhoka dene ke liye fareebi paigham istemal karta hai."
+            },
 
-            // Topic 6: Web Development (10 questions)
-            { id: 48, topic: "Web Dev", topicId: 6, question: "Software making websites accessible through internet:", options: ["Web browser", "Web server", "Web designer", "Web host"], correct: 1, explanation: "Web server stores and serves website content." },
-            { id: 49, topic: "Web Dev", topicId: 6, question: "Website where users ask questions and discuss:", options: ["Blog", "Forums site", "E-commerce site", "Portfolio site"], correct: 1, explanation: "Forums are for community discussions and Q&A." },
-            { id: 50, topic: "Web Dev", topicId: 6, question: "Entertainment sites specialize in delivering:", options: ["News articles", "Products for sale", "Videos, images, games", "Educational courses"], correct: 2, explanation: "Entertainment sites provide multimedia content." },
-            { id: 51, topic: "Web Dev", topicId: 6, question: "Browser translates codes if extension is:", options: [".doc", ".pdf", ".html", ".exe"], correct: 2, explanation: "Browsers interpret and render HTML files." },
-            { id: 52, topic: "Web Dev", topicId: 6, question: "Tag that adds line space before and after text:", options: ["<br>", "<p>", "<div>", "<span>"], correct: 1, explanation: "The <p> tag adds margin above and below text." },
-            { id: 53, topic: "Web Dev", topicId: 6, question: "List showing items in numerical sequence:", options: ["Unordered list", "Ordered list", "Definition list", "Menu list"], correct: 1, explanation: "Ordered list (<ol>) displays numbered items." },
-            { id: 54, topic: "Web Dev", topicId: 6, question: "To create clickable navigation text, use:", options: ["<link> tag", "<a> tag", "<nav> tag", "<href> tag"], correct: 1, explanation: "The <a> anchor tag creates hyperlinks." },
-            { id: 55, topic: "Web Dev", topicId: 6, question: "To differentiate heading cells in table:", options: ["<td> tag", "<th> tag", "<tr> tag", "<dt> tag"], correct: 1, explanation: "The <th> tag defines table header cells." },
-            { id: 56, topic: "Web Dev", topicId: 6, question: "Tag defining title in browser tab:", options: ["<thead>", "<title>", "<head>", "<h1>"], correct: 1, explanation: "The <title> tag defines document title." },
-            { id: 57, topic: "Web Dev", topicId: 6, question: "Attribute for image URL in <img> tag:", options: ["Target", "Name", "Href", "Src"], correct: 3, explanation: "The src attribute specifies image path/URL." },
+            // Topic 6: Web Development (10 questions) - FIXED HTML TAGS
+            { 
+                id: 48, topic: "Web Dev", topicId: 6, 
+                question: "Software making websites accessible through internet:", 
+                options: ["Web browser", "Web server", "Web designer", "Web host"], 
+                correct: 1, 
+                explanation: "Web server stores and serves website content.",
+                urdu: "Web server website ka content store aur serve karta hai."
+            },
+            { 
+                id: 49, topic: "Web Dev", topicId: 6, 
+                question: "Website where users ask questions and discuss:", 
+                options: ["Blog", "Forums site", "E-commerce site", "Portfolio site"], 
+                correct: 1, 
+                explanation: "Forums are for community discussions and Q&A.",
+                urdu: "Forums community discussions aur sawalat-o-jawabat ke liye hain."
+            },
+            { 
+                id: 50, topic: "Web Dev", topicId: 6, 
+                question: "Entertainment sites specialize in delivering:", 
+                options: ["News articles", "Products for sale", "Videos, images, games", "Educational courses"], 
+                correct: 2, 
+                explanation: "Entertainment sites provide multimedia content.",
+                urdu: "Entertainment sites multimedia content faraham karti hain."
+            },
+            { 
+                id: 51, topic: "Web Dev", topicId: 6, 
+                question: "Browser translates codes if extension is:", 
+                options: [".doc", ".pdf", ".html", ".exe"], 
+                correct: 2, 
+                explanation: "Browsers interpret and render HTML files.",
+                urdu: "Browser HTML files ko samajhta aur dikhata hai."
+            },
+            { 
+                id: 52, topic: "Web Dev", topicId: 6, 
+                question: "Tag that adds line space before and after text:", 
+                options: ["&lt;br&gt;", "&lt;p&gt;", "&lt;div&gt;", "&lt;span&gt;"], 
+                correct: 1, 
+                explanation: "The <p> tag adds margin above and below text.",
+                urdu: "<p> tag text ke upar aur neeche margin add karta hai."
+            },
+            { 
+                id: 53, topic: "Web Dev", topicId: 6, 
+                question: "List showing items in numerical sequence:", 
+                options: ["Unordered list", "Ordered list", "Definition list", "Menu list"], 
+                correct: 1, 
+                explanation: "Ordered list (<ol>) displays numbered items.",
+                urdu: "Ordered list (<ol>) items ko numbers ke sath dikhata hai."
+            },
+            { 
+                id: 54, topic: "Web Dev", topicId: 6, 
+                question: "To create clickable navigation text, use:", 
+                options: ["&lt;link&gt; tag", "&lt;a&gt; tag", "&lt;nav&gt; tag", "&lt;href&gt; tag"], 
+                correct: 1, 
+                explanation: "The <a> anchor tag creates hyperlinks.",
+                urdu: "<a> anchor tag hyperlinks banata hai."
+            },
+            { 
+                id: 55, topic: "Web Dev", topicId: 6, 
+                question: "To differentiate heading cells in table:", 
+                options: ["&lt;td&gt; tag", "&lt;th&gt; tag", "&lt;tr&gt; tag", "&lt;dt&gt; tag"], 
+                correct: 1, 
+                explanation: "The <th> tag defines table header cells.",
+                urdu: "<th> tag table header cells define karta hai."
+            },
+            { 
+                id: 56, topic: "Web Dev", topicId: 6, 
+                question: "Tag defining title in browser tab:", 
+                options: ["&lt;thead&gt;", "&lt;title&gt;", "&lt;head&gt;", "&lt;h1&gt;"], 
+                correct: 1, 
+                explanation: "The <title> tag defines document title.",
+                urdu: "<title> tag document ka title define karta hai."
+            },
+            { 
+                id: 57, topic: "Web Dev", topicId: 6, 
+                question: "Attribute for image URL in &lt;img&gt; tag:", 
+                options: ["Target", "Name", "Href", "Src"], 
+                correct: 3, 
+                explanation: "The src attribute specifies image path/URL.",
+                urdu: "src attribute image ka path/URL specify karta hai."
+            },
 
             // Topic 7: DBMS (10 questions)
-            { id: 58, topic: "DBMS", topicId: 7, question: "Which MS Office package is a DBMS?", options: ["MS Word", "MS Excel", "MS PowerPoint", "MS Access"], correct: 3, explanation: "MS Access is the database management application." },
-            { id: 59, topic: "DBMS", topicId: 7, question: "Limitation of flat file database:", options: ["Is complicated", "Is very heavy", "Stores data in single file", "Not supported online"], correct: 2, explanation: "Flat-file databases store all data in one table/file." },
-            { id: 60, topic: "DBMS", topicId: 7, question: "In student database, address will be a:", options: ["Record", "Entity", "Field", "Data type"], correct: 2, explanation: "A field represents a specific category of information." },
-            { id: 61, topic: "DBMS", topicId: 7, question: "Data redundancy means:", options: ["Duplication of data", "Size of data", "Variety of data", "Data type"], correct: 0, explanation: "Redundancy is storing same data in multiple places." },
-            { id: 62, topic: "DBMS", topicId: 7, question: "Key allowing only unique entries:", options: ["Primary key", "Foreign key", "Secondary key", "Super key"], correct: 0, explanation: "Primary key uniquely identifies each record." },
-            { id: 63, topic: "DBMS", topicId: 7, question: "Field storing student names should be:", options: ["Integer", "String", "Float", "Boolean"], correct: 1, explanation: "String data type is used for text like names." },
-            { id: 64, topic: "DBMS", topicId: 7, question: "In relational database, keys create:", options: ["Table", "Record", "Fields", "Relationship"], correct: 3, explanation: "Keys link tables creating logical relationships." },
-            { id: 65, topic: "DBMS", topicId: 7, question: "Shape for attribute in ERD:", options: ["Rectangle", "Ellipse/Oval", "Diamond", "Line"], correct: 1, explanation: "Ellipses represent attributes in ER diagrams." },
-            { id: 66, topic: "DBMS", topicId: 7, question: "One record matching one record of another entity:", options: ["One-to-many", "One-to-one", "Many-to-many", "Many-to-one"], correct: 1, explanation: "One-to-one means each record relates to exactly one." },
-            { id: 67, topic: "DBMS", topicId: 7, question: "In student table, single student's particulars is a:", options: ["Field", "Record", "Entity", "Attribute"], correct: 1, explanation: "A record contains all information for one entry." }
+            { 
+                id: 58, topic: "DBMS", topicId: 7, 
+                question: "Which MS Office package is a DBMS?", 
+                options: ["MS Word", "MS Excel", "MS PowerPoint", "MS Access"], 
+                correct: 3, 
+                explanation: "MS Access is the database management application.",
+                urdu: "MS Access database management application hai."
+            },
+            { 
+                id: 59, topic: "DBMS", topicId: 7, 
+                question: "Limitation of flat file database:", 
+                options: ["Is complicated", "Is very heavy", "Stores data in single file", "Not supported online"], 
+                correct: 2, 
+                explanation: "Flat-file databases store all data in one table/file.",
+                urdu: "Flat-file database saara data aik table/file mein store karta hai."
+            },
+            { 
+                id: 60, topic: "DBMS", topicId: 7, 
+                question: "In student database, address will be a:", 
+                options: ["Record", "Entity", "Field", "Data type"], 
+                correct: 2, 
+                explanation: "A field represents a specific category of information.",
+                urdu: "Field kisi khaas qism ki maloomat ko dikhata hai."
+            },
+            { 
+                id: 61, topic: "DBMS", topicId: 7, 
+                question: "Data redundancy means:", 
+                options: ["Duplication of data", "Size of data", "Variety of data", "Data type"], 
+                correct: 0, 
+                explanation: "Redundancy is storing same data in multiple places.",
+                urdu: "Redundancy wahi data kai jagah store karna hai."
+            },
+            { 
+                id: 62, topic: "DBMS", topicId: 7, 
+                question: "Key allowing only unique entries:", 
+                options: ["Primary key", "Foreign key", "Secondary key", "Super key"], 
+                correct: 0, 
+                explanation: "Primary key uniquely identifies each record.",
+                urdu: "Primary key har record ko alag pehchan deta hai."
+            },
+            { 
+                id: 63, topic: "DBMS", topicId: 7, 
+                question: "Field storing student names should be:", 
+                options: ["Integer", "String", "Float", "Boolean"], 
+                correct: 1, 
+                explanation: "String data type is used for text like names.",
+                urdu: "String data type naam jaise text ke liye use hota hai."
+            },
+            { 
+                id: 64, topic: "DBMS", topicId: 7, 
+                question: "In relational database, keys create:", 
+                options: ["Table", "Record", "Fields", "Relationship"], 
+                correct: 3, 
+                explanation: "Keys link tables creating logical relationships.",
+                urdu: "Keys tables ko jodkar logical rishte banate hain."
+            },
+            { 
+                id: 65, topic: "DBMS", topicId: 7, 
+                question: "Shape for attribute in ERD:", 
+                options: ["Rectangle", "Ellipse/Oval", "Diamond", "Line"], 
+                correct: 1, 
+                explanation: "Ellipses represent attributes in ER diagrams.",
+                urdu: "ER diagram mein attributes ko ellipse se dikhaya jata hai."
+            },
+            { 
+                id: 66, topic: "DBMS", topicId: 7, 
+                question: "One record matching one record of another entity:", 
+                options: ["One-to-many", "One-to-one", "Many-to-many", "Many-to-one"], 
+                correct: 1, 
+                explanation: "One-to-one means each record relates to exactly one.",
+                urdu: "One-to-one matlab har record bilkul aik se juda hai."
+            },
+            { 
+                id: 67, topic: "DBMS", topicId: 7, 
+                question: "In student table, single student's particulars is a:", 
+                options: ["Field", "Record", "Entity", "Attribute"], 
+                correct: 1, 
+                explanation: "A record contains all information for one entry.",
+                urdu: "Record mein aik entry ki saari maloomat hoti hai."
+            }
         ];
 
         // Topics data
@@ -1729,7 +2216,7 @@
 
             // Update question
             document.getElementById('questionTopic').textContent = q.topic;
-            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('questionText').innerHTML = q.question;
 
             // Options
             const optionsHtml = q.options.map((opt, idx) => {
@@ -1759,6 +2246,7 @@
             const explanation = document.getElementById('explanation');
             if (state.answers[state.currentQuestion] !== null && state.mode === 'practice') {
                 document.getElementById('explanationText').textContent = q.explanation;
+                document.getElementById('explanationUrdu').textContent = '📝 ' + q.urdu;
                 explanation.classList.add('show');
             } else {
                 explanation.classList.remove('show');
@@ -1994,7 +2482,10 @@
                             </span>
                             ${!isCorrect ? `<span class="review-answer correct-ans">Correct: ${q.options[q.correct]}</span>` : ''}
                         </div>
-                        <div class="review-explanation">${q.explanation}</div>
+                        <div class="review-explanation">
+                            ${q.explanation}
+                        </div>
+                        <div class="review-urdu">📝 ${q.urdu}</div>
                     </div>
                 `;
             }).join('');
@@ -2028,4 +2519,4 @@
         }
     </script>
 </body>
-</html>.
+</html>
