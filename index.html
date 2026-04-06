@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Light Theme */
             --bg-primary: #f8fafc;
             --bg-secondary: #ffffff;
             --bg-tertiary: #f1f5f9;
@@ -72,7 +71,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Background Animation */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -103,7 +101,6 @@
             66% { transform: translate(-2%, 1%) rotate(-1deg); }
         }
 
-        /* Container */
         .app-container {
             max-width: 800px;
             margin: 0 auto;
@@ -113,7 +110,6 @@
             min-height: 100dvh;
         }
 
-        /* Header */
         .app-header {
             display: flex;
             justify-content: space-between;
@@ -185,7 +181,6 @@
             transform: scale(0.95);
         }
 
-        /* Cards */
         .card {
             background: var(--bg-secondary);
             border-radius: 24px;
@@ -202,7 +197,6 @@
             border: 1px solid var(--glass-border);
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 40px 20px;
@@ -242,10 +236,9 @@
             margin: 0 auto;
         }
 
-        /* Stats Bar */
         .stats-bar {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 12px;
             margin-bottom: 32px;
         }
@@ -280,7 +273,6 @@
             margin-top: 4px;
         }
 
-        /* Section Title */
         .section-title {
             display: flex;
             align-items: center;
@@ -301,7 +293,6 @@
             border-radius: 1px;
         }
 
-        /* Topic Grid */
         .topic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -397,7 +388,6 @@
             transform: scale(1);
         }
 
-        /* Select All Button */
         .select-all-btn {
             width: 100%;
             padding: 14px;
@@ -418,10 +408,9 @@
             background: rgba(99, 102, 241, 0.1);
         }
 
-        /* Mode Selection */
         .mode-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 12px;
             margin-bottom: 32px;
         }
@@ -463,7 +452,6 @@
             color: var(--text-muted);
         }
 
-        /* Primary Button */
         .btn-primary {
             width: 100%;
             padding: 18px 32px;
@@ -496,7 +484,6 @@
             cursor: not-allowed;
         }
 
-        /* Secondary Button */
         .btn-secondary {
             padding: 14px 28px;
             background: var(--bg-tertiary);
@@ -513,7 +500,6 @@
             background: var(--border-color);
         }
 
-        /* Quiz Screen */
         .quiz-screen {
             display: none;
         }
@@ -595,7 +581,6 @@
             50% { transform: scale(1.05); }
         }
 
-        /* Question Navigator */
         .question-nav {
             display: flex;
             gap: 8px;
@@ -648,7 +633,6 @@
             color: white;
         }
 
-        /* Question Card */
         .question-card {
             margin-bottom: 24px;
         }
@@ -674,7 +658,6 @@
             margin-bottom: 24px;
         }
 
-        /* Options */
         .options-grid {
             display: grid;
             gap: 12px;
@@ -765,7 +748,6 @@
             opacity: 1;
         }
 
-        /* Explanation */
         .explanation {
             background: var(--success-bg);
             border-left: 4px solid var(--success);
@@ -811,7 +793,6 @@
             font-style: italic;
         }
 
-        /* Navigation Buttons */
         .nav-buttons {
             display: flex;
             gap: 12px;
@@ -849,7 +830,6 @@
             transform: translateY(-2px);
         }
 
-        /* Result Screen */
         .result-screen {
             display: none;
         }
@@ -970,7 +950,6 @@
             flex: 1;
         }
 
-        /* Review Section */
         .review-section {
             margin-top: 32px;
             text-align: left;
@@ -1067,7 +1046,443 @@
             font-style: italic;
         }
 
-        /* Footer */
+        /* ==================== SHORT NOTES STYLES ==================== */
+        .notes-screen {
+            display: none;
+        }
+
+        .notes-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .notes-back-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: none;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+            flex-shrink: 0;
+        }
+
+        .notes-back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow-lg);
+        }
+
+        .notes-header-text h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .notes-header-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .notes-search {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .notes-search input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .notes-search input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .notes-search input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .notes-search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .notes-search-clear {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .notes-search-clear.show {
+            display: flex;
+        }
+
+        .notes-unit-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 16px;
+            margin-bottom: 8px;
+            scrollbar-width: none;
+        }
+
+        .notes-unit-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .notes-unit-tab {
+            padding: 10px 18px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .notes-unit-tab:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .notes-unit-tab.active {
+            background: var(--accent-gradient);
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .notes-count-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .notes-qa-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .notes-qa-card:hover {
+            box-shadow: var(--card-shadow-lg);
+        }
+
+        .notes-qa-card.expanded {
+            border-color: var(--accent-primary);
+        }
+
+        .notes-qa-question {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .notes-qa-question:hover {
+            background: rgba(99, 102, 241, 0.03);
+        }
+
+        .notes-qa-num {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .notes-qa-q-text {
+            flex: 1;
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            padding-top: 5px;
+        }
+
+        .notes-qa-toggle {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+
+        .notes-qa-card.expanded .notes-qa-toggle {
+            background: var(--accent-primary);
+            color: white;
+            transform: rotate(180deg);
+        }
+
+        .notes-qa-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+        }
+
+        .notes-qa-card.expanded .notes-qa-answer {
+            max-height: 2000px;
+        }
+
+        .notes-qa-answer-inner {
+            padding: 0 20px 24px 70px;
+        }
+
+        .notes-answer-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--success-bg);
+            color: var(--success);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .notes-answer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .notes-answer-text p {
+            margin-bottom: 10px;
+        }
+
+        .notes-answer-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .notes-answer-text ul,
+        .notes-answer-text ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .notes-answer-text li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        .notes-answer-text li::marker {
+            color: var(--accent-primary);
+        }
+
+        /* Comparison Table */
+        .notes-compare-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 14px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        .notes-compare-table th {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .notes-compare-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .notes-compare-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .notes-compare-table tr:nth-child(even) td {
+            background: var(--bg-tertiary);
+        }
+
+        .notes-compare-table tr:hover td {
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .notes-highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 12px 0;
+        }
+
+        .notes-highlight-box p {
+            margin: 0;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .notes-example-box {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning);
+            border-radius: 0 10px 10px 0;
+            padding: 12px 16px;
+            margin: 12px 0;
+        }
+
+        .notes-example-box .example-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--warning);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .notes-code-block {
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            margin: 12px 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            color: var(--accent-primary);
+        }
+
+        .notes-tip-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.04));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+
+        .notes-tip-box .tip-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .notes-tip-box p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .notes-no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .notes-no-results .no-result-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .notes-no-results p {
+            font-size: 0.95rem;
+        }
+
+        /* Expand All / Collapse All */
+        .notes-expand-all-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .notes-expand-all-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* ==================== END SHORT NOTES STYLES ==================== */
+
         .app-footer {
             position: fixed;
             bottom: 0;
@@ -1109,7 +1524,6 @@
             background-clip: text;
         }
 
-        /* Confetti */
         .confetti {
             position: fixed;
             top: 0;
@@ -1140,7 +1554,6 @@
             }
         }
 
-        /* Screen Transitions */
         .screen {
             animation: fadeIn 0.5s ease;
         }
@@ -1150,7 +1563,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive */
         @media (max-width: 600px) {
             .app-container {
                 padding: 16px;
@@ -1159,6 +1571,10 @@
 
             .hero {
                 padding: 30px 16px;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .topic-grid {
@@ -1179,7 +1595,7 @@
             }
 
             .mode-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
             }
 
@@ -1235,16 +1651,32 @@
             .result-actions {
                 flex-direction: column;
             }
+
+            /* Notes responsive */
+            .notes-qa-answer-inner {
+                padding: 0 16px 20px 16px;
+            }
+
+            .notes-compare-table {
+                font-size: 0.78rem;
+            }
+
+            .notes-compare-table th,
+            .notes-compare-table td {
+                padding: 8px 10px;
+            }
+
+            .notes-qa-q-text {
+                font-size: 0.88rem;
+            }
         }
 
-        /* Tablet */
         @media (min-width: 601px) and (max-width: 900px) {
             .topic-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        /* Desktop */
         @media (min-width: 901px) {
             .topic-grid {
                 grid-template-columns: repeat(4, 1fr);
@@ -1256,7 +1688,6 @@
             }
         }
 
-        /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation: none !important;
@@ -1264,7 +1695,6 @@
             }
         }
 
-        /* Touch improvements */
         @media (hover: none) {
             .topic-card:hover,
             .mode-card:hover,
@@ -1273,7 +1703,6 @@
             }
         }
 
-        /* Hide screens by default */
         .hidden {
             display: none !important;
         }
@@ -1290,7 +1719,7 @@
                 <div class="logo-icon">📚</div>
                 <div class="logo-text">
                     <h1>Computer Quiz</h1>
-                    <p>Class 9th • 67 MCQs</p>
+                    <p>Class 9th • Quiz + Short Notes</p>
                 </div>
             </div>
             <div class="header-actions">
@@ -1302,17 +1731,15 @@
 
         <!-- Start Screen -->
         <div class="screen" id="startScreen">
-            <!-- Hero -->
             <div class="hero card card-glass">
                 <span class="hero-badge">
                     <span>🎯</span>
                     Ready to Test Your Knowledge?
                 </span>
                 <h2>Master Computer Science</h2>
-                <p>Select topics, choose your mode, and challenge yourself with 67 carefully crafted questions!</p>
+                <p>Select topics, choose your mode, and challenge yourself with 67 MCQs + Short Q/A Notes!</p>
             </div>
 
-            <!-- Stats -->
             <div class="stats-bar">
                 <div class="stat-item">
                     <div class="stat-value">7</div>
@@ -1320,15 +1747,18 @@
                 </div>
                 <div class="stat-item">
                     <div class="stat-value">67</div>
-                    <div class="stat-label">Questions</div>
+                    <div class="stat-label">MCQs</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">26</div>
+                    <div class="stat-label">Short Q/A</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">4</div>
                     <div class="stat-label">Modes</div>
                 </div>
             </div>
 
-            <!-- Topics Section -->
             <div class="section-title">
                 <h3>📖 Select Topics</h3>
                 <div class="line"></div>
@@ -1340,7 +1770,6 @@
 
             <div class="topic-grid" id="topicGrid"></div>
 
-            <!-- Mode Section -->
             <div class="section-title">
                 <h3>🎮 Choose Mode</h3>
                 <div class="line"></div>
@@ -1362,9 +1791,13 @@
                     <div class="mode-name">Timed</div>
                     <div class="mode-desc">30s per question</div>
                 </div>
+                <div class="mode-card" onclick="openShortNotes()" id="modeNotes">
+                    <div class="mode-icon">📖</div>
+                    <div class="mode-name">Short Notes</div>
+                    <div class="mode-desc">Q/A for exams</div>
+                </div>
             </div>
 
-            <!-- Start Button -->
             <button class="btn-primary" onclick="startQuiz()" id="startBtn" disabled>
                 <span>Select Topics to Start</span>
                 <span>🚀</span>
@@ -1374,7 +1807,6 @@
         <!-- Quiz Screen -->
         <div class="screen quiz-screen" id="quizScreen">
             <div class="card">
-                <!-- Quiz Header -->
                 <div class="quiz-header">
                     <div class="quiz-progress">
                         <div class="progress-text">
@@ -1393,10 +1825,8 @@
                     </div>
                 </div>
 
-                <!-- Question Navigator -->
                 <div class="question-nav" id="questionNav"></div>
 
-                <!-- Question Card -->
                 <div class="question-card" id="questionCard">
                     <span class="question-topic" id="questionTopic">Loading...</span>
                     <p class="question-text" id="questionText">Loading question...</p>
@@ -1408,7 +1838,6 @@
                     </div>
                 </div>
 
-                <!-- Navigation -->
                 <div class="nav-buttons">
                     <button class="nav-btn prev" onclick="previousQuestion()" id="prevBtn">
                         <span>←</span>
@@ -1484,7 +1913,6 @@
                     </button>
                 </div>
 
-                <!-- Review Section -->
                 <div class="review-section">
                     <button class="review-toggle" onclick="toggleReview()">
                         <span>📋 Review Answers</span>
@@ -1493,6 +1921,37 @@
                     <div class="review-content" id="reviewContent"></div>
                 </div>
             </div>
+        </div>
+
+        <!-- ==================== SHORT NOTES SCREEN ==================== -->
+        <div class="screen notes-screen" id="notesScreen">
+            <div class="notes-header">
+                <button class="notes-back-btn" onclick="closeShortNotes()">←</button>
+                <div class="notes-header-text">
+                    <h2>📖 Short Q/A Notes</h2>
+                    <p>Complete preparation for board exams</p>
+                </div>
+            </div>
+
+            <div class="notes-search">
+                <span class="notes-search-icon">🔍</span>
+                <input type="text" id="notesSearchInput" placeholder="Search questions or answers..." oninput="searchNotes()">
+                <button class="notes-search-clear" id="notesClearBtn" onclick="clearNotesSearch()">✕</button>
+            </div>
+
+            <div class="notes-unit-tabs" id="notesUnitTabs"></div>
+
+            <div class="notes-count-badge" id="notesCountBadge">
+                <span>📝</span>
+                <span id="notesCountText">26 Questions</span>
+            </div>
+
+            <button class="notes-expand-all-btn" id="notesExpandAllBtn" onclick="toggleExpandAll()">
+                <span id="expandAllIcon">📖</span>
+                <span id="expandAllText">Expand All Answers</span>
+            </button>
+
+            <div id="notesQAContainer"></div>
         </div>
     </div>
 
@@ -1508,556 +1967,484 @@
     </footer>
 
     <script>
-        // ==================== QUESTIONS DATA ====================
+        // ==================== MCQ QUESTIONS DATA ====================
         const allQuestions = [
-            // Topic 1: Computer Fundamentals (10 questions)
-            { 
-                id: 1, topic: "Computer Fundamentals", topicId: 1, 
-                question: "The device that converts hard copy into soft copy is called:", 
-                options: ["Printer", "Scanner", "Monitor", "Keyboard"], 
-                correct: 1, 
-                explanation: "A scanner converts physical documents (hard copy) into digital format (soft copy) by capturing images of the document.",
-                urdu: "Scanner aik aisa device hai jo physical documents (hard copy) ko digital format (soft copy) mein convert karta hai document ki images capture karke."
-            },
-            { 
-                id: 2, topic: "Computer Fundamentals", topicId: 1, 
-                question: "The volatile memory:", 
-                options: ["Stores data permanently", "Loses contents when power is disconnected", "Cannot be modified", "Is slower than secondary storage"], 
-                correct: 1, 
-                explanation: "Volatile memory (like RAM) loses its contents when the power supply is interrupted.",
-                urdu: "Volatile memory (jaise RAM) apna data kho deti hai jab power supply band ho jaye."
-            },
-            { 
-                id: 3, topic: "Computer Fundamentals", topicId: 1, 
-                question: "Media players are classified as:", 
-                options: ["System software", "Entertainment software", "Utility software", "Programming software"], 
-                correct: 1, 
-                explanation: "Media players are entertainment software designed to play audio and video files.",
-                urdu: "Media players entertainment software hain jo audio aur video files chalane ke liye banaye gaye hain."
-            },
-            { 
-                id: 4, topic: "Computer Fundamentals", topicId: 1, 
-                question: "Modern programming languages use:", 
-                options: ["Assembler", "Compiler", "Machine code", "Binary translator"], 
-                correct: 1, 
-                explanation: "Modern high-level programming languages use compilers to translate code into machine code.",
-                urdu: "Modern high-level programming languages compiler use karte hain code ko machine code mein translate karne ke liye."
-            },
-            { 
-                id: 5, topic: "Computer Fundamentals", topicId: 1, 
-                question: "The inexpensive and most commonly used computers are:", 
-                options: ["Mainframe computers", "Super computers", "Micro computers", "Mini computers"], 
-                correct: 2, 
-                explanation: "Microcomputers (PCs, laptops) are the most affordable and widely used.",
-                urdu: "Microcomputers (PCs, laptops) sabse saste aur ziada istemal hone wale computers hain."
-            },
-            { 
-                id: 6, topic: "Computer Fundamentals", topicId: 1, 
-                question: "A computer cannot start without:", 
-                options: ["Microsoft Word", "Operating System", "Internet connection", "Printer"], 
-                correct: 1, 
-                explanation: "The Operating System is essential software for computer function.",
-                urdu: "Operating System zaroori software hai computer ke kaam karne ke liye."
-            },
-            { 
-                id: 7, topic: "Computer Fundamentals", topicId: 1, 
-                question: "GUI was developed in:", 
-                options: ["First generation", "Second generation", "Third generation", "Fourth generation"], 
-                correct: 3, 
-                explanation: "GUI was developed in the fourth generation of computers (1971-present).",
-                urdu: "GUI fourth generation (1971-ab tak) mein develop kiya gaya tha."
-            },
-            { 
-                id: 8, topic: "Computer Fundamentals", topicId: 1, 
-                question: "A person who develops programs using programming languages is called:", 
-                options: ["Hardware engineer", "Software engineer", "Network administrator", "Data analyst"], 
-                correct: 1, 
-                explanation: "A software engineer develops programs using various programming languages.",
-                urdu: "Software engineer wo shakhs hai jo mukhtalif programming languages istemal karke programs banata hai."
-            },
-            { 
-                id: 9, topic: "Computer Fundamentals", topicId: 1, 
-                question: "The program that manages computer resources is:", 
-                options: ["Web browser", "Operating System", "Word processor", "Antivirus"], 
-                correct: 1, 
-                explanation: "The Operating System manages CPU, memory, storage, and all resources.",
-                urdu: "Operating System CPU, memory, storage aur tamam resources ko manage karta hai."
-            },
-            { 
-                id: 10, topic: "Computer Fundamentals", topicId: 1, 
-                question: "Wires connecting CPU with main memory to identify locations is:", 
-                options: ["Data bus", "Control bus", "Address bus", "System bus"], 
-                correct: 2, 
-                explanation: "The Address bus carries memory addresses from processor to components.",
-                urdu: "Address bus processor se components tak memory addresses le kar jata hai."
-            },
+            { id: 1, topic: "Computer Fundamentals", topicId: 1, question: "The device that converts hard copy into soft copy is called:", options: ["Printer", "Scanner", "Monitor", "Keyboard"], correct: 1, explanation: "A scanner converts physical documents (hard copy) into digital format (soft copy) by capturing images of the document.", urdu: "Scanner aik aisa device hai jo physical documents (hard copy) ko digital format (soft copy) mein convert karta hai document ki images capture karke." },
+            { id: 2, topic: "Computer Fundamentals", topicId: 1, question: "The volatile memory:", options: ["Stores data permanently", "Loses contents when power is disconnected", "Cannot be modified", "Is slower than secondary storage"], correct: 1, explanation: "Volatile memory (like RAM) loses its contents when the power supply is interrupted.", urdu: "Volatile memory (jaise RAM) apna data kho deti hai jab power supply band ho jaye." },
+            { id: 3, topic: "Computer Fundamentals", topicId: 1, question: "Media players are classified as:", options: ["System software", "Entertainment software", "Utility software", "Programming software"], correct: 1, explanation: "Media players are entertainment software designed to play audio and video files.", urdu: "Media players entertainment software hain jo audio aur video files chalane ke liye banaye gaye hain." },
+            { id: 4, topic: "Computer Fundamentals", topicId: 1, question: "Modern programming languages use:", options: ["Assembler", "Compiler", "Machine code", "Binary translator"], correct: 1, explanation: "Modern high-level programming languages use compilers to translate code into machine code.", urdu: "Modern high-level programming languages compiler use karte hain code ko machine code mein translate karne ke liye." },
+            { id: 5, topic: "Computer Fundamentals", topicId: 1, question: "The inexpensive and most commonly used computers are:", options: ["Mainframe computers", "Super computers", "Micro computers", "Mini computers"], correct: 2, explanation: "Microcomputers (PCs, laptops) are the most affordable and widely used.", urdu: "Microcomputers (PCs, laptops) sabse saste aur ziada istemal hone wale computers hain." },
+            { id: 6, topic: "Computer Fundamentals", topicId: 1, question: "A computer cannot start without:", options: ["Microsoft Word", "Operating System", "Internet connection", "Printer"], correct: 1, explanation: "The Operating System is essential software for computer function.", urdu: "Operating System zaroori software hai computer ke kaam karne ke liye." },
+            { id: 7, topic: "Computer Fundamentals", topicId: 1, question: "GUI was developed in:", options: ["First generation", "Second generation", "Third generation", "Fourth generation"], correct: 3, explanation: "GUI was developed in the fourth generation of computers (1971-present).", urdu: "GUI fourth generation (1971-ab tak) mein develop kiya gaya tha." },
+            { id: 8, topic: "Computer Fundamentals", topicId: 1, question: "A person who develops programs using programming languages is called:", options: ["Hardware engineer", "Software engineer", "Network administrator", "Data analyst"], correct: 1, explanation: "A software engineer develops programs using various programming languages.", urdu: "Software engineer wo shakhs hai jo mukhtalif programming languages istemal karke programs banata hai." },
+            { id: 9, topic: "Computer Fundamentals", topicId: 1, question: "The program that manages computer resources is:", options: ["Web browser", "Operating System", "Word processor", "Antivirus"], correct: 1, explanation: "The Operating System manages CPU, memory, storage, and all resources.", urdu: "Operating System CPU, memory, storage aur tamam resources ko manage karta hai." },
+            { id: 10, topic: "Computer Fundamentals", topicId: 1, question: "Wires connecting CPU with main memory to identify locations is:", options: ["Data bus", "Control bus", "Address bus", "System bus"], correct: 2, explanation: "The Address bus carries memory addresses from processor to components.", urdu: "Address bus processor se components tak memory addresses le kar jata hai." },
+            { id: 11, topic: "Operating Systems", topicId: 2, question: "The software which performs all basic tasks is:", options: ["Application software", "Operating System", "Utility software", "Firmware"], correct: 1, explanation: "The OS performs basic tasks like memory management and process handling.", urdu: "OS basic kaam karta hai jaise memory management aur process handling." },
+            { id: 12, topic: "Operating Systems", topicId: 2, question: "A program that enables user interaction with computer is:", options: ["Compiler", "Interface", "Driver", "Protocol"], correct: 1, explanation: "An interface (GUI or CLI) allows users to interact with the computer.", urdu: "Interface (GUI ya CLI) users ko computer ke sath interact karne ki suvidha deta hai." },
+            { id: 13, topic: "Operating Systems", topicId: 2, question: "DOS is an example of:", options: ["Multi-user OS", "Single user OS", "Network OS", "Real-time OS"], correct: 1, explanation: "MS-DOS was designed for one person at a time on a single computer.", urdu: "MS-DOS aik waqt mein sirf aik shakhs ke liye aik computer par banaya gaya tha." },
+            { id: 14, topic: "Operating Systems", topicId: 2, question: "The OS that allows frequent task switching is:", options: ["Batch processing", "Time sharing", "Real-time", "Distributed"], correct: 1, explanation: "Time-sharing OS rapidly switches between multiple tasks.", urdu: "Time-sharing OS bahut tezi se kai tasks ke darmiyan switch karta hai." },
+            { id: 15, topic: "Operating Systems", topicId: 2, question: "Jobs are executed in a group in which OS?", options: ["Time sharing", "Real-time", "Batch processing", "Distributed"], correct: 2, explanation: "Batch processing systems execute similar jobs as a group.", urdu: "Batch processing system milte julte jobs ko aik group mein execute karta hai." },
+            { id: 16, topic: "Operating Systems", topicId: 2, question: "Which management controls dynamic allocation of resources?", options: ["File management", "Resource management", "User management", "Network management"], correct: 1, explanation: "Resource management allocates CPU, memory, and I/O devices.", urdu: "Resource management CPU, memory aur I/O devices ko allocate karta hai." },
+            { id: 17, topic: "Operating Systems", topicId: 2, question: "Users that can access multi-user OS simultaneously:", options: ["One", "Many", "Two", "Only administrators"], correct: 1, explanation: "Multi-user OS allows many users to access resources simultaneously.", urdu: "Multi-user OS kai users ko aik sath resources access karne ki ijazat deta hai." },
+            { id: 18, topic: "Operating Systems", topicId: 2, question: "System guaranteeing critical tasks without delay:", options: ["Batch processing", "Soft real-time", "Time sharing", "Hard real-time"], correct: 3, explanation: "Hard real-time systems ensure tasks complete within strict deadlines.", urdu: "Hard real-time systems zarurat tasks ko waqt par mukammal karne ki guarantee dete hain." },
+            { id: 19, topic: "Operating Systems", topicId: 2, question: "The process of starting OS is called:", options: ["Resource management", "Booting", "Error checking", "File management"], correct: 1, explanation: "Booting loads the OS into main memory when computer starts.", urdu: "Booting OS ko main memory mein load karta hai jab computer start hota hai." },
+            { id: 20, topic: "Operating Systems", topicId: 2, question: "Programs helping office workers do routine tasks:", options: ["Operating system", "Antivirus", "Email", "Office automation"], correct: 3, explanation: "Office automation refers to software like MS Office for office tasks.", urdu: "Office automation wo software hai jaise MS Office jo office ke kaam ke liye hai." },
+            { id: 21, topic: "MS Office", topicId: 3, question: "Software used for accounting purposes:", options: ["MS Word", "MS Excel", "MS PowerPoint", "MS Access"], correct: 1, explanation: "MS Excel is ideal for accounting and financial calculations.", urdu: "MS Excel accounting aur financial calculations ke liye behtar hai." },
+            { id: 22, topic: "MS Office", topicId: 3, question: "Software used to format a document:", options: ["MS Excel", "MS Word", "MS Access", "MS Outlook"], correct: 1, explanation: "MS Word is designed for creating and formatting documents.", urdu: "MS Word documents banana aur format karne ke liye banaya gaya hai." },
+            { id: 23, topic: "MS Office", topicId: 3, question: "Character that initiates a formula in Excel:", options: ["+ (plus)", "- (minus)", "= (equals)", "* (asterisk)"], correct: 2, explanation: "Every Excel formula must begin with an equals sign (=).", urdu: "Har Excel formula equals sign (=) se shuru hona chahiye." },
+            { id: 24, topic: "MS Office", topicId: 3, question: "Function to rearrange data according to criteria:", options: ["Filtering", "Sorting", "Grouping", "Merging"], correct: 1, explanation: "Sorting arranges data in alphabetical or numerical order.", urdu: "Sorting data ko alphabetical ya numerical order mein arrange karta hai." },
+            { id: 25, topic: "MS Office", topicId: 3, question: "To change overall design of Word document, use:", options: ["Styles", "Themes", "Fonts", "Colors"], correct: 1, explanation: "Themes change the overall look including colors and fonts.", urdu: "Themes poora design change karte hain jismein colors aur fonts shamil hain." },
+            { id: 26, topic: "MS Office", topicId: 3, question: "Charts are used to:", options: ["Store data", "Print documents", "Show quantities graphically", "Send emails"], correct: 2, explanation: "Charts convert numerical data into visual representations.", urdu: "Charts numerical data ko visual tasveer mein tabdeel karte hain." },
+            { id: 27, topic: "MS Office", topicId: 3, question: "For automatic table of contents, define:", options: ["Font sizes", "Levels of heading", "Page numbers", "Margins"], correct: 1, explanation: "Word uses Heading styles for Table of Contents.", urdu: "Word Table of Contents ke liye Heading styles use karta hai." },
+            { id: 28, topic: "Networks", topicId: 4, question: "Wired media is also called:", options: ["Unguided media", "Directed/Guided media", "Wireless media", "Broadcast media"], correct: 1, explanation: "Wired media guides signals along a physical path (cables).", urdu: "Wired media signals ko physical path (cables) ke zariye guide karta hai." },
+            { id: 29, topic: "Networks", topicId: 4, question: "A communication system has:", options: ["Three components", "Four components", "Five components", "Six components"], correct: 2, explanation: "Five components: Message, Sender, Receiver, Medium, Protocol.", urdu: "Paanch components: Message, Sender, Receiver, Medium, Protocol." },
+            { id: 30, topic: "Networks", topicId: 4, question: "Physical and logical addresses are:", options: ["Same", "Unique", "Optional", "Temporary"], correct: 1, explanation: "Every device must have unique MAC and IP addresses.", urdu: "Har device ka MAC aur IP address unique hona chahiye." },
+            { id: 31, topic: "Networks", topicId: 4, question: "Electrical engineers should join:", options: ["ACM", "IEEE", "ISO", "ANSI"], correct: 1, explanation: "IEEE is the largest association for electrical engineers.", urdu: "IEEE electrical engineers ke liye sabse bari association hai." },
+            { id: 32, topic: "Networks", topicId: 4, question: "Topology where all devices connect to central hub:", options: ["Bus", "Ring", "Star", "Mesh"], correct: 2, explanation: "Star topology connects all devices to a central hub.", urdu: "Star topology mein sab devices central hub se jude hote hain." },
+            { id: 33, topic: "Networks", topicId: 4, question: "Change in signal shape between sender and receiver:", options: ["Attenuation", "Noise", "Distortion", "Interference"], correct: 2, explanation: "Distortion alters the signal's shape during transmission.", urdu: "Distortion signal ki shakal ko transmission ke dauran change kar deta hai." },
+            { id: 34, topic: "Networks", topicId: 4, question: "Router determines which data path:", options: ["Longest", "Shortest/Optimal", "Random", "Fixed"], correct: 1, explanation: "Routers find the most efficient path for data packets.", urdu: "Router data packets ke liye sabse behtar path dhoondhta hai." },
+            { id: 35, topic: "Networks", topicId: 4, question: "Converting digital to analog signal:", options: ["Demodulation", "Modulation", "Bandwidth", "Multiplexing"], correct: 1, explanation: "Modulation converts digital signals to analog.", urdu: "Modulation digital signals ko analog mein convert karta hai." },
+            { id: 36, topic: "Networks", topicId: 4, question: "Bits used in IPv4 address:", options: ["16", "32", "64", "128"], correct: 1, explanation: "IPv4 uses 32 bits (4 octets × 8 bits).", urdu: "IPv4 mein 32 bits use hote hain (4 octets × 8 bits)." },
+            { id: 37, topic: "Networks", topicId: 4, question: "Loss of energy in transmission signal:", options: ["Noise", "Distortion", "Jitter", "Attenuation"], correct: 3, explanation: "Attenuation is loss of signal strength over distance.", urdu: "Attenuation fasle ke sath signal ki taqat kam hona hai." },
+            { id: 38, topic: "Cyber Security", topicId: 5, question: "Broad term for harmful software:", options: ["Virus", "Malware", "Spyware", "Worm"], correct: 1, explanation: "Malware is the umbrella term for all harmful programs.", urdu: "Malware tamam nuqsandeh programs ke liye aam lafz hai." },
+            { id: 39, topic: "Cyber Security", topicId: 5, question: "Software is mostly protected under:", options: ["Patents", "Copyrights", "Trademarks", "Trade secrets"], correct: 1, explanation: "Copyright is standard legal protection for software code.", urdu: "Copyright software code ke liye qanooni hifazat ka aam tareeqa hai." },
+            { id: 40, topic: "Cyber Security", topicId: 5, question: "Authentication allowing only real person to access:", options: ["Password", "PIN", "Biometric", "Token"], correct: 2, explanation: "Biometric verifies unique physical characteristics.", urdu: "Biometric unique jismani khususiyat ki tasdeeq karta hai." },
+            { id: 41, topic: "Cyber Security", topicId: 5, question: "Professional ethics is important because:", options: ["It's a law", "It creates healthy work environment", "It increases salary", "It's mandatory"], correct: 1, explanation: "Ethics create trust and positive work environment.", urdu: "Ethics se bharosa aur acha kaam ka mahol banta hai." },
+            { id: 42, topic: "Cyber Security", topicId: 5, question: "Free antivirus software often:", options: ["Offers complete protection", "Offers only limited service", "Is better than paid", "Has no ads"], correct: 1, explanation: "Free antivirus provides basic but limited protection.", urdu: "Free antivirus bunyadi magar mehdood hifazat deta hai." },
+            { id: 43, topic: "Cyber Security", topicId: 5, question: "Virus spreads through:", options: ["Email attachments", "USB drives", "Internet downloads", "All of these"], correct: 3, explanation: "Viruses spread through multiple channels.", urdu: "Virus kai tareqon se phailta hai." },
+            { id: 44, topic: "Cyber Security", topicId: 5, question: "Malware replicating without being attached to files:", options: ["Virus", "Trojan", "Worm", "Adware"], correct: 2, explanation: "A worm self-replicates without needing a host file.", urdu: "Worm khud apni naqal bana leta hai bina kisi file ki zarurat ke." },
+            { id: 45, topic: "Cyber Security", topicId: 5, question: "Least harmful malware displaying ads:", options: ["Virus", "Spyware", "Adware", "Trojan"], correct: 2, explanation: "Adware only displays ads without major damage.", urdu: "Adware sirf ads dikhata hai bina badi nuqsan ke." },
+            { id: 46, topic: "Cyber Security", topicId: 5, question: "Copying text without acknowledging author:", options: ["Hacking", "Piracy", "Plagiarism", "Phishing"], correct: 2, explanation: "Plagiarism is using work without proper credit.", urdu: "Plagiarism kaam ko sahi tasdeeq ke bina istemal karna hai." },
+            { id: 47, topic: "Cyber Security", topicId: 5, question: "'Click to win $5 voucher' is example of:", options: ["Spam", "Phishing", "Malware", "Hacking"], correct: 1, explanation: "Phishing uses deceptive messages to trick people.", urdu: "Phishing logon ko dhoka dene ke liye fareebi paigham istemal karta hai." },
+            { id: 48, topic: "Web Dev", topicId: 6, question: "Software making websites accessible through internet:", options: ["Web browser", "Web server", "Web designer", "Web host"], correct: 1, explanation: "Web server stores and serves website content.", urdu: "Web server website ka content store aur serve karta hai." },
+            { id: 49, topic: "Web Dev", topicId: 6, question: "Website where users ask questions and discuss:", options: ["Blog", "Forums site", "E-commerce site", "Portfolio site"], correct: 1, explanation: "Forums are for community discussions and Q&A.", urdu: "Forums community discussions aur sawalat-o-jawabat ke liye hain." },
+            { id: 50, topic: "Web Dev", topicId: 6, question: "Entertainment sites specialize in delivering:", options: ["News articles", "Products for sale", "Videos, images, games", "Educational courses"], correct: 2, explanation: "Entertainment sites provide multimedia content.", urdu: "Entertainment sites multimedia content faraham karti hain." },
+            { id: 51, topic: "Web Dev", topicId: 6, question: "Browser translates codes if extension is:", options: [".doc", ".pdf", ".html", ".exe"], correct: 2, explanation: "Browsers interpret and render HTML files.", urdu: "Browser HTML files ko samajhta aur dikhata hai." },
+            { id: 52, topic: "Web Dev", topicId: 6, question: "Tag that adds line space before and after text:", options: ["&lt;br&gt;", "&lt;p&gt;", "&lt;div&gt;", "&lt;span&gt;"], correct: 1, explanation: "The <p> tag adds margin above and below text.", urdu: "<p> tag text ke upar aur neeche margin add karta hai." },
+            { id: 53, topic: "Web Dev", topicId: 6, question: "List showing items in numerical sequence:", options: ["Unordered list", "Ordered list", "Definition list", "Menu list"], correct: 1, explanation: "Ordered list (<ol>) displays numbered items.", urdu: "Ordered list (<ol>) items ko numbers ke sath dikhata hai." },
+            { id: 54, topic: "Web Dev", topicId: 6, question: "To create clickable navigation text, use:", options: ["&lt;link&gt; tag", "&lt;a&gt; tag", "&lt;nav&gt; tag", "&lt;href&gt; tag"], correct: 1, explanation: "The <a> anchor tag creates hyperlinks.", urdu: "<a> anchor tag hyperlinks banata hai." },
+            { id: 55, topic: "Web Dev", topicId: 6, question: "To differentiate heading cells in table:", options: ["&lt;td&gt; tag", "&lt;th&gt; tag", "&lt;tr&gt; tag", "&lt;dt&gt; tag"], correct: 1, explanation: "The <th> tag defines table header cells.", urdu: "<th> tag table header cells define karta hai." },
+            { id: 56, topic: "Web Dev", topicId: 6, question: "Tag defining title in browser tab:", options: ["&lt;thead&gt;", "&lt;title&gt;", "&lt;head&gt;", "&lt;h1&gt;"], correct: 1, explanation: "The <title> tag defines document title.", urdu: "<title> tag document ka title define karta hai." },
+            { id: 57, topic: "Web Dev", topicId: 6, question: "Attribute for image URL in &lt;img&gt; tag:", options: ["Target", "Name", "Href", "Src"], correct: 3, explanation: "The src attribute specifies image path/URL.", urdu: "src attribute image ka path/URL specify karta hai." },
+            { id: 58, topic: "DBMS", topicId: 7, question: "Which MS Office package is a DBMS?", options: ["MS Word", "MS Excel", "MS PowerPoint", "MS Access"], correct: 3, explanation: "MS Access is the database management application.", urdu: "MS Access database management application hai." },
+            { id: 59, topic: "DBMS", topicId: 7, question: "Limitation of flat file database:", options: ["Is complicated", "Is very heavy", "Stores data in single file", "Not supported online"], correct: 2, explanation: "Flat-file databases store all data in one table/file.", urdu: "Flat-file database saara data aik table/file mein store karta hai." },
+            { id: 60, topic: "DBMS", topicId: 7, question: "In student database, address will be a:", options: ["Record", "Entity", "Field", "Data type"], correct: 2, explanation: "A field represents a specific category of information.", urdu: "Field kisi khaas qism ki maloomat ko dikhata hai." },
+            { id: 61, topic: "DBMS", topicId: 7, question: "Data redundancy means:", options: ["Duplication of data", "Size of data", "Variety of data", "Data type"], correct: 0, explanation: "Redundancy is storing same data in multiple places.", urdu: "Redundancy wahi data kai jagah store karna hai." },
+            { id: 62, topic: "DBMS", topicId: 7, question: "Key allowing only unique entries:", options: ["Primary key", "Foreign key", "Secondary key", "Super key"], correct: 0, explanation: "Primary key uniquely identifies each record.", urdu: "Primary key har record ko alag pehchan deta hai." },
+            { id: 63, topic: "DBMS", topicId: 7, question: "Field storing student names should be:", options: ["Integer", "String", "Float", "Boolean"], correct: 1, explanation: "String data type is used for text like names.", urdu: "String data type naam jaise text ke liye use hota hai." },
+            { id: 64, topic: "DBMS", topicId: 7, question: "In relational database, keys create:", options: ["Table", "Record", "Fields", "Relationship"], correct: 3, explanation: "Keys link tables creating logical relationships.", urdu: "Keys tables ko jodkar logical rishte banate hain." },
+            { id: 65, topic: "DBMS", topicId: 7, question: "Shape for attribute in ERD:", options: ["Rectangle", "Ellipse/Oval", "Diamond", "Line"], correct: 1, explanation: "Ellipses represent attributes in ER diagrams.", urdu: "ER diagram mein attributes ko ellipse se dikhaya jata hai." },
+            { id: 66, topic: "DBMS", topicId: 7, question: "One record matching one record of another entity:", options: ["One-to-many", "One-to-one", "Many-to-many", "Many-to-one"], correct: 1, explanation: "One-to-one means each record relates to exactly one.", urdu: "One-to-one matlab har record bilkul aik se juda hai." },
+            { id: 67, topic: "DBMS", topicId: 7, question: "In student table, single student's particulars is a:", options: ["Field", "Record", "Entity", "Attribute"], correct: 1, explanation: "A record contains all information for one entry.", urdu: "Record mein aik entry ki saari maloomat hoti hai." }
+        ];
 
-            // Topic 2: Operating Systems (10 questions)
-            { 
-                id: 11, topic: "Operating Systems", topicId: 2, 
-                question: "The software which performs all basic tasks is:", 
-                options: ["Application software", "Operating System", "Utility software", "Firmware"], 
-                correct: 1, 
-                explanation: "The OS performs basic tasks like memory management and process handling.",
-                urdu: "OS basic kaam karta hai jaise memory management aur process handling."
+        // ==================== SHORT Q/A NOTES DATA ====================
+        const shortNotesData = [
+            {
+                unitId: 1,
+                unitName: "Unit 1: Introduction to Computer",
+                icon: "💻",
+                questions: [
+                    {
+                        q: "What are the basic operations of a computer system? Also discuss the use of computer in our daily life.",
+                        a: `<p><strong>The basic operations of a computer system are:</strong></p>
+                        <ol>
+                            <li><strong>Input</strong> – Entering data into the computer through keyboard, mouse, scanner, etc.</li>
+                            <li><strong>Processing</strong> – The CPU processes the entered data.</li>
+                            <li><strong>Output</strong> – The computer gives result through monitor, printer, speakers, etc.</li>
+                            <li><strong>Storage</strong> – Saving data and information for future use.</li>
+                            <li><strong>Control</strong> – The control unit manages all operations of the computer.</li>
+                        </ol>
+                        <p><strong>Use of computer in daily life:</strong></p>
+                        <ul>
+                            <li>In education for online classes and assignments</li>
+                            <li>In banks for keeping records</li>
+                            <li>In hospitals for patient data</li>
+                            <li>In business for accounts and billing</li>
+                            <li>In communication for email and social media</li>
+                            <li>In homes for entertainment, gaming, and internet</li>
+                        </ul>`
+                    },
+                    {
+                        q: "Compiler vs Interpreter.",
+                        a: `<table class="notes-compare-table">
+                            <tr><th>Compiler</th><th>Interpreter</th></tr>
+                            <tr><td>Translates the whole program at once</td><td>Translates one line at a time</td></tr>
+                            <tr><td>Takes more time in compilation</td><td>Faster for small execution</td></tr>
+                            <tr><td>Shows all errors after compilation</td><td>Shows error line by line</td></tr>
+                            <tr><td>Produces object code/exe file</td><td>Does not produce object code</td></tr>
+                            <tr><td>Example: C, C++</td><td>Example: Python, JavaScript</td></tr>
+                        </table>`
+                    },
+                    {
+                        q: "System Software vs Application Software.",
+                        a: `<table class="notes-compare-table">
+                            <tr><th>System Software</th><th>Application Software</th></tr>
+                            <tr><td>Runs and controls the computer hardware</td><td>Performs specific user tasks</td></tr>
+                            <tr><td>Necessary for computer operation</td><td>Installed according to user need</td></tr>
+                            <tr><td>Works as a platform for applications</td><td>Works on top of system software</td></tr>
+                            <tr><td>Example: Operating System, Device Drivers</td><td>Example: MS Word, Excel, Photoshop</td></tr>
+                        </table>`
+                    },
+                    {
+                        q: "Describe Artificial Intelligence with two examples.",
+                        a: `<p><strong>Artificial Intelligence (AI)</strong> is the ability of a computer or machine to think, learn, and make decisions like humans.</p>
+                        <div class="notes-example-box">
+                            <div class="example-label">Examples</div>
+                            <p>🤖 Robots<br>🗣️ Voice assistants like Siri or Google Assistant<br>🚗 Self-driving cars<br>👤 Facial recognition systems</p>
+                        </div>`
+                    },
+                    {
+                        q: "Which monitor will you prefer, CRT or FPD? Why?",
+                        a: `<p>I will prefer <strong>FPD (Flat Panel Display)</strong> monitor.</p>
+                        <p><strong>Reasons:</strong></p>
+                        <ul>
+                            <li>It is thin and light</li>
+                            <li>Uses less electricity</li>
+                            <li>Occupies less space</li>
+                            <li>Produces less heat</li>
+                            <li>Better for modern use</li>
+                        </ul>
+                        <div class="notes-highlight-box">
+                            <p>⚠️ CRT is bulky, heavy, and consumes more power.</p>
+                        </div>`
+                    },
+                    {
+                        q: "What is bus? How many types of buses?",
+                        a: `<p>A <strong>bus</strong> is a communication path or set of wires that transfers data between computer components.</p>
+                        <p><strong>Types of buses:</strong></p>
+                        <ol>
+                            <li><strong>Data Bus</strong> – Transfers data</li>
+                            <li><strong>Address Bus</strong> – Transfers memory addresses</li>
+                            <li><strong>Control Bus</strong> – Transfers control signals</li>
+                        </ol>`
+                    }
+                ]
             },
-            { 
-                id: 12, topic: "Operating Systems", topicId: 2, 
-                question: "A program that enables user interaction with computer is:", 
-                options: ["Compiler", "Interface", "Driver", "Protocol"], 
-                correct: 1, 
-                explanation: "An interface (GUI or CLI) allows users to interact with the computer.",
-                urdu: "Interface (GUI ya CLI) users ko computer ke sath interact karne ki suvidha deta hai."
+            {
+                unitId: 2,
+                unitName: "Unit 2: Operating System",
+                icon: "⚙️",
+                questions: [
+                    {
+                        q: "Define Operating System. Give three examples. Also define its types.",
+                        a: `<p>An <strong>Operating System (OS)</strong> is system software that manages computer hardware and software resources and provides an interface between user and computer.</p>
+                        <div class="notes-example-box">
+                            <div class="example-label">Examples of OS</div>
+                            <p>Windows • Linux • macOS</p>
+                        </div>
+                        <p><strong>Types of Operating System:</strong></p>
+                        <ul>
+                            <li><strong>Single-user OS</strong> – Used by one user at a time</li>
+                            <li><strong>Multi-user OS</strong> – Used by many users</li>
+                            <li><strong>Multitasking OS</strong> – Performs many tasks at the same time</li>
+                            <li><strong>Real-time OS</strong> – Gives immediate response</li>
+                            <li><strong>Distributed OS</strong> – Manages multiple computers</li>
+                        </ul>`
+                    },
+                    {
+                        q: "List the functions of an Operating System. Write briefly about any three.",
+                        a: `<p><strong>Functions of OS:</strong></p>
+                        <ul>
+                            <li>Memory management</li>
+                            <li>File management</li>
+                            <li>Process management</li>
+                            <li>Device management</li>
+                            <li>Security</li>
+                            <li>User interface</li>
+                        </ul>
+                        <p><strong>Briefly about any three:</strong></p>
+                        <ol>
+                            <li><strong>Memory Management</strong> – Controls and allocates memory to programs.</li>
+                            <li><strong>File Management</strong> – Creates, deletes, and organizes files/folders.</li>
+                            <li><strong>Device Management</strong> – Controls input/output devices like printer, keyboard, mouse.</li>
+                        </ol>`
+                    },
+                    {
+                        q: "CLI vs GUI.",
+                        a: `<table class="notes-compare-table">
+                            <tr><th>CLI</th><th>GUI</th></tr>
+                            <tr><td>Command Line Interface</td><td>Graphical User Interface</td></tr>
+                            <tr><td>User types commands</td><td>User uses icons, menus, buttons</td></tr>
+                            <tr><td>Difficult for beginners</td><td>Easy to use</td></tr>
+                            <tr><td>Fast for experts</td><td>User-friendly</td></tr>
+                            <tr><td>Example: DOS</td><td>Example: Windows</td></tr>
+                        </table>`
+                    },
+                    {
+                        q: "Why is it important to install an antivirus?",
+                        a: `<p>It is important to install an antivirus because:</p>
+                        <ul>
+                            <li>It protects computer from viruses, worms, and malware</li>
+                            <li>It keeps data safe</li>
+                            <li>It improves system security</li>
+                            <li>It prevents file damage</li>
+                            <li>It helps secure internet browsing</li>
+                        </ul>`
+                    }
+                ]
             },
-            { 
-                id: 13, topic: "Operating Systems", topicId: 2, 
-                question: "DOS is an example of:", 
-                options: ["Multi-user OS", "Single user OS", "Network OS", "Real-time OS"], 
-                correct: 1, 
-                explanation: "MS-DOS was designed for one person at a time on a single computer.",
-                urdu: "MS-DOS aik waqt mein sirf aik shakhs ke liye aik computer par banaya gaya tha."
+            {
+                unitId: 3,
+                unitName: "Unit 3: Word Processing / Spreadsheet",
+                icon: "📊",
+                questions: [
+                    {
+                        q: "What is a word processor? Write any applications.",
+                        a: `<p>A <strong>word processor</strong> is software used to create, edit, format, and print text documents.</p>
+                        <p><strong>Applications of word processor:</strong></p>
+                        <ul>
+                            <li>Writing letters</li>
+                            <li>Making reports</li>
+                            <li>Creating resumes</li>
+                            <li>Preparing assignments</li>
+                            <li>Printing documents</li>
+                        </ul>
+                        <div class="notes-example-box">
+                            <div class="example-label">Examples</div>
+                            <p>MS Word, WordPad, Google Docs</p>
+                        </div>`
+                    },
+                    {
+                        q: "How can we apply margins in a document?",
+                        a: `<p>To apply margins in a document:</p>
+                        <ol>
+                            <li>Open the document</li>
+                            <li>Go to <strong>Layout / Page Layout</strong></li>
+                            <li>Click on <strong>Margins</strong></li>
+                            <li>Select a predefined margin or choose <strong>Custom Margins</strong></li>
+                            <li>Set top, bottom, left, and right margins</li>
+                        </ol>`
+                    },
+                    {
+                        q: "Importance of MS Excel. List the uses of spreadsheet in business.",
+                        a: `<p><strong>MS Excel</strong> is important because it is used for calculations, data organization, and chart making.</p>
+                        <p><strong>Uses of spreadsheet in business:</strong></p>
+                        <ul>
+                            <li>Preparing budgets</li>
+                            <li>Salary calculation</li>
+                            <li>Keeping sales records</li>
+                            <li>Inventory management</li>
+                            <li>Creating charts and reports</li>
+                            <li>Financial analysis</li>
+                        </ul>`
+                    },
+                    {
+                        q: "Why do we use watermark in a document? Give examples.",
+                        a: `<p>A <strong>watermark</strong> is a light background text or image in a document.</p>
+                        <p><strong>Uses of watermark:</strong></p>
+                        <ul>
+                            <li>To show document status</li>
+                            <li>To protect document identity</li>
+                            <li>To mark official papers</li>
+                        </ul>
+                        <div class="notes-example-box">
+                            <div class="example-label">Examples</div>
+                            <p>Confidential • Draft • Sample • Urgent</p>
+                        </div>`
+                    }
+                ]
             },
-            { 
-                id: 14, topic: "Operating Systems", topicId: 2, 
-                question: "The OS that allows frequent task switching is:", 
-                options: ["Batch processing", "Time sharing", "Real-time", "Distributed"], 
-                correct: 1, 
-                explanation: "Time-sharing OS rapidly switches between multiple tasks.",
-                urdu: "Time-sharing OS bahut tezi se kai tasks ke darmiyan switch karta hai."
+            {
+                unitId: 4,
+                unitName: "Unit 4: Networking",
+                icon: "🌐",
+                questions: [
+                    {
+                        q: "Write functions of the following networking devices: Router, Amplifier, Hub, Switch, Modem.",
+                        a: `<p><strong>1) Router</strong><br>A router connects different networks and forwards data packets to the correct destination.</p>
+                        <p><strong>2) Amplifier</strong><br>An amplifier increases the strength of a signal.</p>
+                        <p><strong>3) Hub</strong><br>A hub connects multiple computers in a network and sends data to all connected devices.</p>
+                        <p><strong>4) Switch</strong><br>A switch connects devices in a network and sends data only to the required device.</p>
+                        <p><strong>5) Modem</strong><br>A modem converts digital signals into analog signals and analog into digital for internet communication.</p>`
+                    },
+                    {
+                        q: "What do you mean by computer network? Write names of network and examples.",
+                        a: `<p>A <strong>computer network</strong> is a group of interconnected computers and devices that share data and resources.</p>
+                        <p><strong>Types of network:</strong></p>
+                        <ul>
+                            <li><strong>LAN</strong> (Local Area Network) – Example: school computer lab</li>
+                            <li><strong>MAN</strong> (Metropolitan Area Network) – Example: network within a city</li>
+                            <li><strong>WAN</strong> (Wide Area Network) – Example: Internet</li>
+                        </ul>`
+                    },
+                    {
+                        q: "Analog vs Digital Signal.",
+                        a: `<table class="notes-compare-table">
+                            <tr><th>Analog Signal</th><th>Digital Signal</th></tr>
+                            <tr><td>Continuous signal</td><td>Discrete signal</td></tr>
+                            <tr><td>Can have many values</td><td>Has only 0 and 1</td></tr>
+                            <tr><td>More noise</td><td>Less noise</td></tr>
+                            <tr><td>Less accurate</td><td>More accurate</td></tr>
+                            <tr><td>Example: Radio signal</td><td>Example: Computer data</td></tr>
+                        </table>`
+                    },
+                    {
+                        q: "Bit rate vs Baud rate. What is transmission medium? Define guided and unguided media.",
+                        a: `<p><strong>Bit Rate:</strong><br>The number of bits transmitted per second.</p>
+                        <p><strong>Baud Rate:</strong><br>The number of signal units or changes transmitted per second.</p>
+                        <p><strong>Transmission Medium:</strong><br>The path through which data travels from sender to receiver.</p>
+                        <p><strong>Types:</strong></p>
+                        <ul>
+                            <li><strong>Guided Media</strong> – Uses physical cables<br>Examples: twisted pair cable, coaxial cable, fiber optic cable</li>
+                            <li><strong>Unguided Media</strong> – Uses air or space<br>Examples: radio waves, microwave, infrared</li>
+                        </ul>`
+                    },
+                    {
+                        q: "Physical Address vs Logical Address.",
+                        a: `<table class="notes-compare-table">
+                            <tr><th>Physical Address</th><th>Logical Address</th></tr>
+                            <tr><td>Permanent address of device</td><td>Temporary address assigned by network</td></tr>
+                            <tr><td>Also called MAC address</td><td>Also called IP address</td></tr>
+                            <tr><td>Given by manufacturer</td><td>Assigned by network administrator or ISP</td></tr>
+                            <tr><td>Used in local network</td><td>Used for communication over network</td></tr>
+                        </table>`
+                    }
+                ]
             },
-            { 
-                id: 15, topic: "Operating Systems", topicId: 2, 
-                question: "Jobs are executed in a group in which OS?", 
-                options: ["Time sharing", "Real-time", "Batch processing", "Distributed"], 
-                correct: 2, 
-                explanation: "Batch processing systems execute similar jobs as a group.",
-                urdu: "Batch processing system milte julte jobs ko aik group mein execute karta hai."
+            {
+                unitId: 5,
+                unitName: "Unit 5: Computer Security",
+                icon: "🔒",
+                questions: [
+                    {
+                        q: "What is ethical hacking? Explain cyber bullying with example.",
+                        a: `<p><strong>Ethical hacking</strong> is legal hacking done with permission to find and fix security weaknesses in a computer system.</p>
+                        <p><strong>Cyber bullying</strong> means harassing, threatening, or insulting someone using internet, social media, or messages.</p>
+                        <div class="notes-example-box">
+                            <div class="example-label">Example</div>
+                            <p>Posting insulting comments about a student on social media is cyber bullying.</p>
+                        </div>`
+                    },
+                    {
+                        q: "Why is computer security important? Write any three reasons.",
+                        a: `<p>Computer security is important because:</p>
+                        <ol>
+                            <li>It protects data from theft</li>
+                            <li>It prevents unauthorized access</li>
+                            <li>It protects system from viruses and hackers</li>
+                        </ol>
+                        <p><strong>Other reasons:</strong></p>
+                        <ul>
+                            <li>Maintains privacy</li>
+                            <li>Prevents financial loss</li>
+                            <li>Ensures safe online communication</li>
+                        </ul>`
+                    },
+                    {
+                        q: "Why is information accuracy important?",
+                        a: `<p>Information accuracy is important because:</p>
+                        <ul>
+                            <li>It helps in correct decision making</li>
+                            <li>It prevents errors and confusion</li>
+                            <li>It improves reliability of records</li>
+                            <li>It saves time and resources</li>
+                        </ul>`
+                    },
+                    {
+                        q: "What are antivirus? Write a few popular names.",
+                        a: `<p><strong>Antivirus</strong> is software that detects, prevents, and removes viruses and malware from a computer.</p>
+                        <p><strong>Popular antivirus names:</strong></p>
+                        <ul>
+                            <li>Norton</li>
+                            <li>McAfee</li>
+                            <li>Avast</li>
+                            <li>Kaspersky</li>
+                            <li>Quick Heal</li>
+                            <li>Windows Defender</li>
+                        </ul>`
+                    }
+                ]
             },
-            { 
-                id: 16, topic: "Operating Systems", topicId: 2, 
-                question: "Which management controls dynamic allocation of resources?", 
-                options: ["File management", "Resource management", "User management", "Network management"], 
-                correct: 1, 
-                explanation: "Resource management allocates CPU, memory, and I/O devices.",
-                urdu: "Resource management CPU, memory aur I/O devices ko allocate karta hai."
+            {
+                unitId: 6,
+                unitName: "Unit 6: HTML",
+                icon: "🌍",
+                questions: [
+                    {
+                        q: "Ordered list vs Unordered list.",
+                        a: `<table class="notes-compare-table">
+                            <tr><th>Ordered List</th><th>Unordered List</th></tr>
+                            <tr><td>Displays items in numbered form</td><td>Displays items in bullet form</td></tr>
+                            <tr><td>Uses &lt;ol&gt; tag</td><td>Uses &lt;ul&gt; tag</td></tr>
+                            <tr><td>Sequence is important</td><td>Sequence is not important</td></tr>
+                        </table>`
+                    },
+                    {
+                        q: "What is HTML? How are images displayed in HTML pages?",
+                        a: `<p><strong>HTML (Hyper Text Markup Language)</strong> is used to create web pages.</p>
+                        <p>Images are displayed in HTML by using the <strong>&lt;img&gt;</strong> tag.</p>
+                        <div class="notes-code-block">&lt;img src="image.jpg" alt="Picture"&gt;</div>`
+                    },
+                    {
+                        q: "Write description of the following tags: &lt;p&gt;, &lt;br&gt;, &lt;hr&gt;, &lt;font&gt;, &lt;img&gt;, &lt;center&gt;, &lt;head&gt;",
+                        a: `<ul>
+                            <li><strong>&lt;p&gt;</strong> – Defines a paragraph</li>
+                            <li><strong>&lt;br&gt;</strong> – Inserts a line break</li>
+                            <li><strong>&lt;hr&gt;</strong> – Draws a horizontal line</li>
+                            <li><strong>&lt;font&gt;</strong> – Changes font size, color, and style</li>
+                            <li><strong>&lt;img&gt;</strong> – Displays image on web page</li>
+                            <li><strong>&lt;center&gt;</strong> – Aligns content in center</li>
+                            <li><strong>&lt;head&gt;</strong> – Contains title and information about webpage</li>
+                        </ul>`
+                    }
+                ]
             },
-            { 
-                id: 17, topic: "Operating Systems", topicId: 2, 
-                question: "Users that can access multi-user OS simultaneously:", 
-                options: ["One", "Many", "Two", "Only administrators"], 
-                correct: 1, 
-                explanation: "Multi-user OS allows many users to access resources simultaneously.",
-                urdu: "Multi-user OS kai users ko aik sath resources access karne ki ijazat deta hai."
-            },
-            { 
-                id: 18, topic: "Operating Systems", topicId: 2, 
-                question: "System guaranteeing critical tasks without delay:", 
-                options: ["Batch processing", "Soft real-time", "Time sharing", "Hard real-time"], 
-                correct: 3, 
-                explanation: "Hard real-time systems ensure tasks complete within strict deadlines.",
-                urdu: "Hard real-time systems zarurat tasks ko waqt par mukammal karne ki guarantee dete hain."
-            },
-            { 
-                id: 19, topic: "Operating Systems", topicId: 2, 
-                question: "The process of starting OS is called:", 
-                options: ["Resource management", "Booting", "Error checking", "File management"], 
-                correct: 1, 
-                explanation: "Booting loads the OS into main memory when computer starts.",
-                urdu: "Booting OS ko main memory mein load karta hai jab computer start hota hai."
-            },
-            { 
-                id: 20, topic: "Operating Systems", topicId: 2, 
-                question: "Programs helping office workers do routine tasks:", 
-                options: ["Operating system", "Antivirus", "Email", "Office automation"], 
-                correct: 3, 
-                explanation: "Office automation refers to software like MS Office for office tasks.",
-                urdu: "Office automation wo software hai jaise MS Office jo office ke kaam ke liye hai."
-            },
-
-            // Topic 3: MS Office (7 questions)
-            { 
-                id: 21, topic: "MS Office", topicId: 3, 
-                question: "Software used for accounting purposes:", 
-                options: ["MS Word", "MS Excel", "MS PowerPoint", "MS Access"], 
-                correct: 1, 
-                explanation: "MS Excel is ideal for accounting and financial calculations.",
-                urdu: "MS Excel accounting aur financial calculations ke liye behtar hai."
-            },
-            { 
-                id: 22, topic: "MS Office", topicId: 3, 
-                question: "Software used to format a document:", 
-                options: ["MS Excel", "MS Word", "MS Access", "MS Outlook"], 
-                correct: 1, 
-                explanation: "MS Word is designed for creating and formatting documents.",
-                urdu: "MS Word documents banana aur format karne ke liye banaya gaya hai."
-            },
-            { 
-                id: 23, topic: "MS Office", topicId: 3, 
-                question: "Character that initiates a formula in Excel:", 
-                options: ["+ (plus)", "- (minus)", "= (equals)", "* (asterisk)"], 
-                correct: 2, 
-                explanation: "Every Excel formula must begin with an equals sign (=).",
-                urdu: "Har Excel formula equals sign (=) se shuru hona chahiye."
-            },
-            { 
-                id: 24, topic: "MS Office", topicId: 3, 
-                question: "Function to rearrange data according to criteria:", 
-                options: ["Filtering", "Sorting", "Grouping", "Merging"], 
-                correct: 1, 
-                explanation: "Sorting arranges data in alphabetical or numerical order.",
-                urdu: "Sorting data ko alphabetical ya numerical order mein arrange karta hai."
-            },
-            { 
-                id: 25, topic: "MS Office", topicId: 3, 
-                question: "To change overall design of Word document, use:", 
-                options: ["Styles", "Themes", "Fonts", "Colors"], 
-                correct: 1, 
-                explanation: "Themes change the overall look including colors and fonts.",
-                urdu: "Themes poora design change karte hain jismein colors aur fonts shamil hain."
-            },
-            { 
-                id: 26, topic: "MS Office", topicId: 3, 
-                question: "Charts are used to:", 
-                options: ["Store data", "Print documents", "Show quantities graphically", "Send emails"], 
-                correct: 2, 
-                explanation: "Charts convert numerical data into visual representations.",
-                urdu: "Charts numerical data ko visual tasveer mein tabdeel karte hain."
-            },
-            { 
-                id: 27, topic: "MS Office", topicId: 3, 
-                question: "For automatic table of contents, define:", 
-                options: ["Font sizes", "Levels of heading", "Page numbers", "Margins"], 
-                correct: 1, 
-                explanation: "Word uses Heading styles for Table of Contents.",
-                urdu: "Word Table of Contents ke liye Heading styles use karta hai."
-            },
-
-            // Topic 4: Computer Networks (10 questions)
-            { 
-                id: 28, topic: "Networks", topicId: 4, 
-                question: "Wired media is also called:", 
-                options: ["Unguided media", "Directed/Guided media", "Wireless media", "Broadcast media"], 
-                correct: 1, 
-                explanation: "Wired media guides signals along a physical path (cables).",
-                urdu: "Wired media signals ko physical path (cables) ke zariye guide karta hai."
-            },
-            { 
-                id: 29, topic: "Networks", topicId: 4, 
-                question: "A communication system has:", 
-                options: ["Three components", "Four components", "Five components", "Six components"], 
-                correct: 2, 
-                explanation: "Five components: Message, Sender, Receiver, Medium, Protocol.",
-                urdu: "Paanch components: Message, Sender, Receiver, Medium, Protocol."
-            },
-            { 
-                id: 30, topic: "Networks", topicId: 4, 
-                question: "Physical and logical addresses are:", 
-                options: ["Same", "Unique", "Optional", "Temporary"], 
-                correct: 1, 
-                explanation: "Every device must have unique MAC and IP addresses.",
-                urdu: "Har device ka MAC aur IP address unique hona chahiye."
-            },
-            { 
-                id: 31, topic: "Networks", topicId: 4, 
-                question: "Electrical engineers should join:", 
-                options: ["ACM", "IEEE", "ISO", "ANSI"], 
-                correct: 1, 
-                explanation: "IEEE is the largest association for electrical engineers.",
-                urdu: "IEEE electrical engineers ke liye sabse bari association hai."
-            },
-            { 
-                id: 32, topic: "Networks", topicId: 4, 
-                question: "Topology where all devices connect to central hub:", 
-                options: ["Bus", "Ring", "Star", "Mesh"], 
-                correct: 2, 
-                explanation: "Star topology connects all devices to a central hub.",
-                urdu: "Star topology mein sab devices central hub se jude hote hain."
-            },
-            { 
-                id: 33, topic: "Networks", topicId: 4, 
-                question: "Change in signal shape between sender and receiver:", 
-                options: ["Attenuation", "Noise", "Distortion", "Interference"], 
-                correct: 2, 
-                explanation: "Distortion alters the signal's shape during transmission.",
-                urdu: "Distortion signal ki shakal ko transmission ke dauran change kar deta hai."
-            },
-            { 
-                id: 34, topic: "Networks", topicId: 4, 
-                question: "Router determines which data path:", 
-                options: ["Longest", "Shortest/Optimal", "Random", "Fixed"], 
-                correct: 1, 
-                explanation: "Routers find the most efficient path for data packets.",
-                urdu: "Router data packets ke liye sabse behtar path dhoondhta hai."
-            },
-            { 
-                id: 35, topic: "Networks", topicId: 4, 
-                question: "Converting digital to analog signal:", 
-                options: ["Demodulation", "Modulation", "Bandwidth", "Multiplexing"], 
-                correct: 1, 
-                explanation: "Modulation converts digital signals to analog.",
-                urdu: "Modulation digital signals ko analog mein convert karta hai."
-            },
-            { 
-                id: 36, topic: "Networks", topicId: 4, 
-                question: "Bits used in IPv4 address:", 
-                options: ["16", "32", "64", "128"], 
-                correct: 1, 
-                explanation: "IPv4 uses 32 bits (4 octets × 8 bits).",
-                urdu: "IPv4 mein 32 bits use hote hain (4 octets × 8 bits)."
-            },
-            { 
-                id: 37, topic: "Networks", topicId: 4, 
-                question: "Loss of energy in transmission signal:", 
-                options: ["Noise", "Distortion", "Jitter", "Attenuation"], 
-                correct: 3, 
-                explanation: "Attenuation is loss of signal strength over distance.",
-                urdu: "Attenuation fasle ke sath signal ki taqat kam hona hai."
-            },
-
-            // Topic 5: Cyber Security (10 questions)
-            { 
-                id: 38, topic: "Cyber Security", topicId: 5, 
-                question: "Broad term for harmful software:", 
-                options: ["Virus", "Malware", "Spyware", "Worm"], 
-                correct: 1, 
-                explanation: "Malware is the umbrella term for all harmful programs.",
-                urdu: "Malware tamam nuqsandeh programs ke liye aam lafz hai."
-            },
-            { 
-                id: 39, topic: "Cyber Security", topicId: 5, 
-                question: "Software is mostly protected under:", 
-                options: ["Patents", "Copyrights", "Trademarks", "Trade secrets"], 
-                correct: 1, 
-                explanation: "Copyright is standard legal protection for software code.",
-                urdu: "Copyright software code ke liye qanooni hifazat ka aam tareeqa hai."
-            },
-            { 
-                id: 40, topic: "Cyber Security", topicId: 5, 
-                question: "Authentication allowing only real person to access:", 
-                options: ["Password", "PIN", "Biometric", "Token"], 
-                correct: 2, 
-                explanation: "Biometric verifies unique physical characteristics.",
-                urdu: "Biometric unique jismani khususiyat ki tasdeeq karta hai."
-            },
-            { 
-                id: 41, topic: "Cyber Security", topicId: 5, 
-                question: "Professional ethics is important because:", 
-                options: ["It's a law", "It creates healthy work environment", "It increases salary", "It's mandatory"], 
-                correct: 1, 
-                explanation: "Ethics create trust and positive work environment.",
-                urdu: "Ethics se bharosa aur acha kaam ka mahol banta hai."
-            },
-            { 
-                id: 42, topic: "Cyber Security", topicId: 5, 
-                question: "Free antivirus software often:", 
-                options: ["Offers complete protection", "Offers only limited service", "Is better than paid", "Has no ads"], 
-                correct: 1, 
-                explanation: "Free antivirus provides basic but limited protection.",
-                urdu: "Free antivirus bunyadi magar mehdood hifazat deta hai."
-            },
-            { 
-                id: 43, topic: "Cyber Security", topicId: 5, 
-                question: "Virus spreads through:", 
-                options: ["Email attachments", "USB drives", "Internet downloads", "All of these"], 
-                correct: 3, 
-                explanation: "Viruses spread through multiple channels.",
-                urdu: "Virus kai tareqon se phailta hai."
-            },
-            { 
-                id: 44, topic: "Cyber Security", topicId: 5, 
-                question: "Malware replicating without being attached to files:", 
-                options: ["Virus", "Trojan", "Worm", "Adware"], 
-                correct: 2, 
-                explanation: "A worm self-replicates without needing a host file.",
-                urdu: "Worm khud apni naqal bana leta hai bina kisi file ki zarurat ke."
-            },
-            { 
-                id: 45, topic: "Cyber Security", topicId: 5, 
-                question: "Least harmful malware displaying ads:", 
-                options: ["Virus", "Spyware", "Adware", "Trojan"], 
-                correct: 2, 
-                explanation: "Adware only displays ads without major damage.",
-                urdu: "Adware sirf ads dikhata hai bina badi nuqsan ke."
-            },
-            { 
-                id: 46, topic: "Cyber Security", topicId: 5, 
-                question: "Copying text without acknowledging author:", 
-                options: ["Hacking", "Piracy", "Plagiarism", "Phishing"], 
-                correct: 2, 
-                explanation: "Plagiarism is using work without proper credit.",
-                urdu: "Plagiarism kaam ko sahi tasdeeq ke bina istemal karna hai."
-            },
-            { 
-                id: 47, topic: "Cyber Security", topicId: 5, 
-                question: "'Click to win $5 voucher' is example of:", 
-                options: ["Spam", "Phishing", "Malware", "Hacking"], 
-                correct: 1, 
-                explanation: "Phishing uses deceptive messages to trick people.",
-                urdu: "Phishing logon ko dhoka dene ke liye fareebi paigham istemal karta hai."
-            },
-
-            // Topic 6: Web Development (10 questions) - FIXED HTML TAGS
-            { 
-                id: 48, topic: "Web Dev", topicId: 6, 
-                question: "Software making websites accessible through internet:", 
-                options: ["Web browser", "Web server", "Web designer", "Web host"], 
-                correct: 1, 
-                explanation: "Web server stores and serves website content.",
-                urdu: "Web server website ka content store aur serve karta hai."
-            },
-            { 
-                id: 49, topic: "Web Dev", topicId: 6, 
-                question: "Website where users ask questions and discuss:", 
-                options: ["Blog", "Forums site", "E-commerce site", "Portfolio site"], 
-                correct: 1, 
-                explanation: "Forums are for community discussions and Q&A.",
-                urdu: "Forums community discussions aur sawalat-o-jawabat ke liye hain."
-            },
-            { 
-                id: 50, topic: "Web Dev", topicId: 6, 
-                question: "Entertainment sites specialize in delivering:", 
-                options: ["News articles", "Products for sale", "Videos, images, games", "Educational courses"], 
-                correct: 2, 
-                explanation: "Entertainment sites provide multimedia content.",
-                urdu: "Entertainment sites multimedia content faraham karti hain."
-            },
-            { 
-                id: 51, topic: "Web Dev", topicId: 6, 
-                question: "Browser translates codes if extension is:", 
-                options: [".doc", ".pdf", ".html", ".exe"], 
-                correct: 2, 
-                explanation: "Browsers interpret and render HTML files.",
-                urdu: "Browser HTML files ko samajhta aur dikhata hai."
-            },
-            { 
-                id: 52, topic: "Web Dev", topicId: 6, 
-                question: "Tag that adds line space before and after text:", 
-                options: ["&lt;br&gt;", "&lt;p&gt;", "&lt;div&gt;", "&lt;span&gt;"], 
-                correct: 1, 
-                explanation: "The <p> tag adds margin above and below text.",
-                urdu: "<p> tag text ke upar aur neeche margin add karta hai."
-            },
-            { 
-                id: 53, topic: "Web Dev", topicId: 6, 
-                question: "List showing items in numerical sequence:", 
-                options: ["Unordered list", "Ordered list", "Definition list", "Menu list"], 
-                correct: 1, 
-                explanation: "Ordered list (<ol>) displays numbered items.",
-                urdu: "Ordered list (<ol>) items ko numbers ke sath dikhata hai."
-            },
-            { 
-                id: 54, topic: "Web Dev", topicId: 6, 
-                question: "To create clickable navigation text, use:", 
-                options: ["&lt;link&gt; tag", "&lt;a&gt; tag", "&lt;nav&gt; tag", "&lt;href&gt; tag"], 
-                correct: 1, 
-                explanation: "The <a> anchor tag creates hyperlinks.",
-                urdu: "<a> anchor tag hyperlinks banata hai."
-            },
-            { 
-                id: 55, topic: "Web Dev", topicId: 6, 
-                question: "To differentiate heading cells in table:", 
-                options: ["&lt;td&gt; tag", "&lt;th&gt; tag", "&lt;tr&gt; tag", "&lt;dt&gt; tag"], 
-                correct: 1, 
-                explanation: "The <th> tag defines table header cells.",
-                urdu: "<th> tag table header cells define karta hai."
-            },
-            { 
-                id: 56, topic: "Web Dev", topicId: 6, 
-                question: "Tag defining title in browser tab:", 
-                options: ["&lt;thead&gt;", "&lt;title&gt;", "&lt;head&gt;", "&lt;h1&gt;"], 
-                correct: 1, 
-                explanation: "The <title> tag defines document title.",
-                urdu: "<title> tag document ka title define karta hai."
-            },
-            { 
-                id: 57, topic: "Web Dev", topicId: 6, 
-                question: "Attribute for image URL in &lt;img&gt; tag:", 
-                options: ["Target", "Name", "Href", "Src"], 
-                correct: 3, 
-                explanation: "The src attribute specifies image path/URL.",
-                urdu: "src attribute image ka path/URL specify karta hai."
-            },
-
-            // Topic 7: DBMS (10 questions)
-            { 
-                id: 58, topic: "DBMS", topicId: 7, 
-                question: "Which MS Office package is a DBMS?", 
-                options: ["MS Word", "MS Excel", "MS PowerPoint", "MS Access"], 
-                correct: 3, 
-                explanation: "MS Access is the database management application.",
-                urdu: "MS Access database management application hai."
-            },
-            { 
-                id: 59, topic: "DBMS", topicId: 7, 
-                question: "Limitation of flat file database:", 
-                options: ["Is complicated", "Is very heavy", "Stores data in single file", "Not supported online"], 
-                correct: 2, 
-                explanation: "Flat-file databases store all data in one table/file.",
-                urdu: "Flat-file database saara data aik table/file mein store karta hai."
-            },
-            { 
-                id: 60, topic: "DBMS", topicId: 7, 
-                question: "In student database, address will be a:", 
-                options: ["Record", "Entity", "Field", "Data type"], 
-                correct: 2, 
-                explanation: "A field represents a specific category of information.",
-                urdu: "Field kisi khaas qism ki maloomat ko dikhata hai."
-            },
-            { 
-                id: 61, topic: "DBMS", topicId: 7, 
-                question: "Data redundancy means:", 
-                options: ["Duplication of data", "Size of data", "Variety of data", "Data type"], 
-                correct: 0, 
-                explanation: "Redundancy is storing same data in multiple places.",
-                urdu: "Redundancy wahi data kai jagah store karna hai."
-            },
-            { 
-                id: 62, topic: "DBMS", topicId: 7, 
-                question: "Key allowing only unique entries:", 
-                options: ["Primary key", "Foreign key", "Secondary key", "Super key"], 
-                correct: 0, 
-                explanation: "Primary key uniquely identifies each record.",
-                urdu: "Primary key har record ko alag pehchan deta hai."
-            },
-            { 
-                id: 63, topic: "DBMS", topicId: 7, 
-                question: "Field storing student names should be:", 
-                options: ["Integer", "String", "Float", "Boolean"], 
-                correct: 1, 
-                explanation: "String data type is used for text like names.",
-                urdu: "String data type naam jaise text ke liye use hota hai."
-            },
-            { 
-                id: 64, topic: "DBMS", topicId: 7, 
-                question: "In relational database, keys create:", 
-                options: ["Table", "Record", "Fields", "Relationship"], 
-                correct: 3, 
-                explanation: "Keys link tables creating logical relationships.",
-                urdu: "Keys tables ko jodkar logical rishte banate hain."
-            },
-            { 
-                id: 65, topic: "DBMS", topicId: 7, 
-                question: "Shape for attribute in ERD:", 
-                options: ["Rectangle", "Ellipse/Oval", "Diamond", "Line"], 
-                correct: 1, 
-                explanation: "Ellipses represent attributes in ER diagrams.",
-                urdu: "ER diagram mein attributes ko ellipse se dikhaya jata hai."
-            },
-            { 
-                id: 66, topic: "DBMS", topicId: 7, 
-                question: "One record matching one record of another entity:", 
-                options: ["One-to-many", "One-to-one", "Many-to-many", "Many-to-one"], 
-                correct: 1, 
-                explanation: "One-to-one means each record relates to exactly one.",
-                urdu: "One-to-one matlab har record bilkul aik se juda hai."
-            },
-            { 
-                id: 67, topic: "DBMS", topicId: 7, 
-                question: "In student table, single student's particulars is a:", 
-                options: ["Field", "Record", "Entity", "Attribute"], 
-                correct: 1, 
-                explanation: "A record contains all information for one entry.",
-                urdu: "Record mein aik entry ki saari maloomat hoti hai."
+            {
+                unitId: 7,
+                unitName: "Unit 7: Database / DBMS",
+                icon: "🗄️",
+                questions: [
+                    {
+                        q: "What is meant by DBMS? Write three uses/characteristics of DBMS.",
+                        a: `<p><strong>DBMS (Database Management System)</strong> is software used to create, store, manage, and retrieve data in a database.</p>
+                        <p><strong>Three uses/characteristics of DBMS:</strong></p>
+                        <ol>
+                            <li>It stores large amount of data</li>
+                            <li>It allows easy data retrieval and update</li>
+                            <li>It reduces data redundancy</li>
+                        </ol>
+                        <p><strong>Other characteristics:</strong></p>
+                        <ul>
+                            <li>Improves security</li>
+                            <li>Supports data sharing</li>
+                            <li>Maintains data integrity</li>
+                        </ul>`
+                    },
+                    {
+                        q: "Flat file system vs Database system.",
+                        a: `<table class="notes-compare-table">
+                            <tr><th>Flat File System</th><th>Database System</th></tr>
+                            <tr><td>Data stored in separate files</td><td>Data stored in organized database</td></tr>
+                            <tr><td>More duplication of data</td><td>Less duplication</td></tr>
+                            <tr><td>Difficult to manage</td><td>Easy to manage</td></tr>
+                            <tr><td>Less secure</td><td>More secure</td></tr>
+                            <tr><td>No relationship between files</td><td>Supports relationships</td></tr>
+                        </table>`
+                    },
+                    {
+                        q: "Table vs View.",
+                        a: `<table class="notes-compare-table">
+                            <tr><th>Table</th><th>View</th></tr>
+                            <tr><td>Stores actual data</td><td>Does not store actual data permanently</td></tr>
+                            <tr><td>Contains rows and columns</td><td>Shows data from one or more tables</td></tr>
+                            <tr><td>Physical database object</td><td>Virtual table</td></tr>
+                            <tr><td>Used to save records</td><td>Used to display selected data</td></tr>
+                        </table>`
+                    },
+                    {
+                        q: "Write three benefits of using relationship in a database.",
+                        a: `<p><strong>Benefits of relationship in database:</strong></p>
+                        <ol>
+                            <li>Reduces data redundancy</li>
+                            <li>Improves data consistency</li>
+                            <li>Makes data retrieval easier</li>
+                        </ol>
+                        <div class="notes-highlight-box">
+                            <p>💡 Other benefit: Maintains data integrity</p>
+                        </div>`
+                    }
+                ]
             }
         ];
 
@@ -2084,6 +2471,13 @@
             timerInterval: null,
             timePerQuestion: 30,
             theme: 'light'
+        };
+
+        // Notes state
+        let notesState = {
+            activeUnit: 'all',
+            expandedAll: false,
+            searchQuery: ''
         };
 
         // Initialize
@@ -2122,11 +2516,9 @@
             `).join('');
         }
 
-        // Toggle topic
         function toggleTopic(id) {
             const card = document.getElementById(`topic-${id}`);
             const idx = state.selectedTopics.indexOf(id);
-            
             if (idx > -1) {
                 state.selectedTopics.splice(idx, 1);
                 card.classList.remove('selected');
@@ -2134,14 +2526,11 @@
                 state.selectedTopics.push(id);
                 card.classList.add('selected');
             }
-            
             updateStartBtn();
         }
 
-        // Toggle all topics
         function toggleAllTopics() {
             const allSelected = state.selectedTopics.length === topics.length;
-            
             if (allSelected) {
                 state.selectedTopics = [];
                 topics.forEach(t => document.getElementById(`topic-${t.id}`).classList.remove('selected'));
@@ -2149,16 +2538,13 @@
                 state.selectedTopics = topics.map(t => t.id);
                 topics.forEach(t => document.getElementById(`topic-${t.id}`).classList.add('selected'));
             }
-            
             updateStartBtn();
         }
 
-        // Update start button
         function updateStartBtn() {
             const btn = document.getElementById('startBtn');
             const count = state.selectedTopics.length > 0 ? 
                 allQuestions.filter(q => state.selectedTopics.includes(q.topicId)).length : 0;
-            
             if (count > 0) {
                 btn.innerHTML = `<span>Start Quiz (${count} Questions)</span><span>🚀</span>`;
                 btn.disabled = false;
@@ -2168,14 +2554,193 @@
             }
         }
 
-        // Select mode
         function selectMode(mode) {
             state.mode = mode;
             document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
             document.getElementById(`mode${mode.charAt(0).toUpperCase() + mode.slice(1)}`).classList.add('active');
+            // Remove active from notes mode card if selecting quiz mode
+            document.getElementById('modeNotes').classList.remove('active');
         }
 
-        // Start quiz
+        // ==================== SHORT NOTES FUNCTIONS ====================
+        function openShortNotes() {
+            // Remove active from quiz modes
+            document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
+            document.getElementById('modeNotes').classList.add('active');
+
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('quizScreen').classList.add('hidden');
+            document.getElementById('quizScreen').style.display = 'none';
+            document.getElementById('resultScreen').classList.add('hidden');
+            document.getElementById('resultScreen').style.display = 'none';
+            document.getElementById('notesScreen').classList.remove('hidden');
+            document.getElementById('notesScreen').style.display = 'block';
+
+            notesState.activeUnit = 'all';
+            notesState.expandedAll = false;
+            notesState.searchQuery = '';
+            document.getElementById('notesSearchInput').value = '';
+
+            buildNotesTabs();
+            renderNotes();
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeShortNotes() {
+            document.getElementById('notesScreen').classList.add('hidden');
+            document.getElementById('notesScreen').style.display = 'none';
+            document.getElementById('startScreen').classList.remove('hidden');
+            document.getElementById('modeNotes').classList.remove('active');
+            // Restore previous mode selection
+            document.getElementById(`mode${state.mode.charAt(0).toUpperCase() + state.mode.slice(1)}`).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function buildNotesTabs() {
+            const container = document.getElementById('notesUnitTabs');
+            let html = `<div class="notes-unit-tab active" onclick="filterNotesUnit('all')">📚 All Units</div>`;
+            shortNotesData.forEach(unit => {
+                html += `<div class="notes-unit-tab" onclick="filterNotesUnit(${unit.unitId})" id="notesTab-${unit.unitId}">${unit.icon} ${unit.unitName.replace('Unit ', 'U').split(':')[0]}</div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function filterNotesUnit(unitId) {
+            notesState.activeUnit = unitId;
+            // Update tabs
+            document.querySelectorAll('.notes-unit-tab').forEach(t => t.classList.remove('active'));
+            if (unitId === 'all') {
+                document.querySelector('.notes-unit-tab').classList.add('active');
+            } else {
+                document.getElementById(`notesTab-${unitId}`).classList.add('active');
+            }
+            renderNotes();
+        }
+
+        function searchNotes() {
+            const query = document.getElementById('notesSearchInput').value.trim().toLowerCase();
+            notesState.searchQuery = query;
+            const clearBtn = document.getElementById('notesClearBtn');
+            clearBtn.classList.toggle('show', query.length > 0);
+            renderNotes();
+        }
+
+        function clearNotesSearch() {
+            document.getElementById('notesSearchInput').value = '';
+            notesState.searchQuery = '';
+            document.getElementById('notesClearBtn').classList.remove('show');
+            renderNotes();
+        }
+
+        function renderNotes() {
+            const container = document.getElementById('notesQAContainer');
+            const search = notesState.searchQuery;
+            let html = '';
+            let totalCount = 0;
+            let globalIndex = 0;
+
+            const unitsToShow = notesState.activeUnit === 'all' 
+                ? shortNotesData 
+                : shortNotesData.filter(u => u.unitId === notesState.activeUnit);
+
+            unitsToShow.forEach(unit => {
+                let unitQuestions = unit.questions;
+
+                if (search) {
+                    unitQuestions = unitQuestions.filter(qa => {
+                        const plainAnswer = qa.a.replace(/<[^>]*>/g, '').toLowerCase();
+                        return qa.q.toLowerCase().includes(search) || plainAnswer.includes(search);
+                    });
+                }
+
+                if (unitQuestions.length === 0) return;
+
+                if (notesState.activeUnit === 'all') {
+                    html += `<div class="section-title" style="margin-top: 24px; margin-bottom: 16px;">
+                        <h3>${unit.icon} ${unit.unitName}</h3>
+                        <div class="line"></div>
+                    </div>`;
+                }
+
+                unitQuestions.forEach((qa, idx) => {
+                    globalIndex++;
+                    totalCount++;
+                    const expanded = notesState.expandedAll ? 'expanded' : '';
+                    
+                    let highlightedQ = qa.q;
+                    if (search) {
+                        const regex = new RegExp(`(${search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+                        highlightedQ = highlightedQ.replace(regex, '<mark style="background: #fef08a; color: #854d0e; padding: 1px 3px; border-radius: 3px;">$1</mark>');
+                    }
+
+                    html += `
+                        <div class="notes-qa-card ${expanded}" id="notesQA-${globalIndex}" onclick="toggleNoteQA(${globalIndex})">
+                            <div class="notes-qa-question">
+                                <div class="notes-qa-num">Q${totalCount}</div>
+                                <div class="notes-qa-q-text">${highlightedQ}</div>
+                                <div class="notes-qa-toggle">▼</div>
+                            </div>
+                            <div class="notes-qa-answer">
+                                <div class="notes-qa-answer-inner">
+                                    <div class="notes-answer-label">✅ Answer</div>
+                                    <div class="notes-answer-text">${qa.a}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+
+            if (totalCount === 0) {
+                html = `
+                    <div class="notes-no-results">
+                        <div class="no-result-icon">🔍</div>
+                        <p>No questions found matching "<strong>${search}</strong>"</p>
+                        <p style="margin-top: 8px; font-size: 0.85rem;">Try different keywords</p>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+            document.getElementById('notesCountText').textContent = `${totalCount} Question${totalCount !== 1 ? 's' : ''}`;
+
+            // Update expand all button text
+            updateExpandAllBtn();
+        }
+
+        function toggleNoteQA(id) {
+            const card = document.getElementById(`notesQA-${id}`);
+            if (card) {
+                card.classList.toggle('expanded');
+            }
+        }
+
+        function toggleExpandAll() {
+            notesState.expandedAll = !notesState.expandedAll;
+            document.querySelectorAll('.notes-qa-card').forEach(card => {
+                if (notesState.expandedAll) {
+                    card.classList.add('expanded');
+                } else {
+                    card.classList.remove('expanded');
+                }
+            });
+            updateExpandAllBtn();
+        }
+
+        function updateExpandAllBtn() {
+            const icon = document.getElementById('expandAllIcon');
+            const text = document.getElementById('expandAllText');
+            if (notesState.expandedAll) {
+                icon.textContent = '📕';
+                text.textContent = 'Collapse All Answers';
+            } else {
+                icon.textContent = '📖';
+                text.textContent = 'Expand All Answers';
+            }
+        }
+
+        // ==================== QUIZ FUNCTIONS ====================
         function startQuiz() {
             if (state.selectedTopics.length === 0) return;
 
@@ -2189,6 +2754,8 @@
             state.startTime = new Date();
 
             document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('notesScreen').classList.add('hidden');
+            document.getElementById('notesScreen').style.display = 'none';
             document.getElementById('quizScreen').classList.remove('hidden');
             document.getElementById('quizScreen').style.display = 'block';
             document.getElementById('resultScreen').classList.add('hidden');
@@ -2203,26 +2770,21 @@
             updateNavigator();
         }
 
-        // Load question
         function loadQuestion() {
             const q = state.questions[state.currentQuestion];
             const total = state.questions.length;
             const num = state.currentQuestion + 1;
 
-            // Update progress
             document.getElementById('progressText').textContent = `Question ${num} of ${total}`;
             document.getElementById('scoreText').textContent = `Score: ${state.score}`;
             document.getElementById('progressBar').style.width = `${(num / total) * 100}%`;
 
-            // Update question
             document.getElementById('questionTopic').textContent = q.topic;
             document.getElementById('questionText').innerHTML = q.question;
 
-            // Options
             const optionsHtml = q.options.map((opt, idx) => {
                 let classes = 'option';
                 const answer = state.answers[state.currentQuestion];
-                
                 if (answer !== null && state.mode === 'practice') {
                     classes += ' disabled';
                     if (idx === q.correct) classes += ' correct';
@@ -2230,7 +2792,6 @@
                 } else if (answer === idx && state.mode !== 'practice') {
                     classes += ' selected';
                 }
-                
                 return `
                     <div class="${classes}" onclick="selectOption(${idx})">
                         <span class="option-letter">${String.fromCharCode(65 + idx)}</span>
@@ -2239,10 +2800,8 @@
                     </div>
                 `;
             }).join('');
-            
             document.getElementById('optionsContainer').innerHTML = optionsHtml;
 
-            // Explanation
             const explanation = document.getElementById('explanation');
             if (state.answers[state.currentQuestion] !== null && state.mode === 'practice') {
                 document.getElementById('explanationText').textContent = q.explanation;
@@ -2252,24 +2811,19 @@
                 explanation.classList.remove('show');
             }
 
-            // Navigation buttons
             document.getElementById('prevBtn').style.display = state.currentQuestion > 0 ? 'flex' : 'none';
-            
             const isLast = state.currentQuestion === total - 1;
             document.getElementById('nextBtn').classList.toggle('hidden', isLast);
             document.getElementById('submitBtn').classList.toggle('hidden', !isLast);
 
-            // Timer
             if (state.mode === 'timed') startTimer();
 
-            // Animate
             document.getElementById('questionCard').style.animation = 'none';
             setTimeout(() => {
                 document.getElementById('questionCard').style.animation = 'fadeIn 0.3s ease';
             }, 10);
         }
 
-        // Update navigator
         function updateNavigator() {
             const nav = document.getElementById('questionNav');
             nav.innerHTML = state.questions.map((q, idx) => {
@@ -2286,22 +2840,17 @@
             }).join('');
         }
 
-        // Go to question
         function goToQuestion(idx) {
             state.currentQuestion = idx;
             loadQuestion();
             updateNavigator();
         }
 
-        // Select option
         function selectOption(idx) {
             if (state.answers[state.currentQuestion] !== null && state.mode === 'practice') return;
-
             const q = state.questions[state.currentQuestion];
             state.answers[state.currentQuestion] = idx;
-
             if (idx === q.correct) state.score++;
-
             if (state.mode === 'practice') {
                 loadQuestion();
             } else {
@@ -2310,10 +2859,8 @@
                     if (i === idx) opt.classList.add('selected');
                 });
             }
-
             document.getElementById('scoreText').textContent = `Score: ${state.score}`;
             updateNavigator();
-
             if (state.mode === 'timed') {
                 clearInterval(state.timerInterval);
                 setTimeout(() => {
@@ -2323,21 +2870,16 @@
             }
         }
 
-        // Timer
         function startTimer() {
             let time = state.timePerQuestion;
             const display = document.getElementById('timerDisplay');
             const text = document.getElementById('timerText');
-            
             clearInterval(state.timerInterval);
             display.classList.remove('warning');
-            
             state.timerInterval = setInterval(() => {
                 time--;
                 text.textContent = time;
-                
                 if (time <= 10) display.classList.add('warning');
-                
                 if (time <= 0) {
                     clearInterval(state.timerInterval);
                     if (state.answers[state.currentQuestion] === null) {
@@ -2349,7 +2891,6 @@
             }, 1000);
         }
 
-        // Navigation
         function nextQuestion() {
             if (state.currentQuestion < state.questions.length - 1) {
                 state.currentQuestion++;
@@ -2366,75 +2907,56 @@
             }
         }
 
-        // Submit quiz
         function submitQuiz() {
             clearInterval(state.timerInterval);
-            
             const endTime = new Date();
             const timeTaken = Math.floor((endTime - state.startTime) / 1000);
             const mins = Math.floor(timeTaken / 60);
             const secs = timeTaken % 60;
-            
             const total = state.questions.length;
             const correct = state.score;
             const incorrect = total - correct;
             const percentage = Math.round((correct / total) * 100);
 
-            // Show result screen
             document.getElementById('quizScreen').classList.add('hidden');
             document.getElementById('quizScreen').style.display = 'none';
             document.getElementById('resultScreen').classList.remove('hidden');
             document.getElementById('resultScreen').style.display = 'block';
 
-            // Animate percentage circle
             const circumference = 2 * Math.PI * 80;
             const offset = circumference - (percentage / 100) * circumference;
             setTimeout(() => {
                 document.getElementById('resultCircleFill').style.strokeDashoffset = offset;
             }, 100);
 
-            // Update stats with animation
             animateNumber('percentageNum', 0, percentage, 1000);
             animateNumber('correctNum', 0, correct, 800);
             animateNumber('incorrectNum', 0, incorrect, 800);
             document.getElementById('totalNum').textContent = total;
             document.getElementById('timeNum').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
 
-            // Result message
             let icon, title, message;
             if (percentage >= 80) {
-                icon = '🏆';
-                title = 'Excellent!';
-                message = 'Outstanding performance! You mastered this topic!';
+                icon = '🏆'; title = 'Excellent!'; message = 'Outstanding performance! You mastered this topic!';
                 showConfetti();
             } else if (percentage >= 60) {
-                icon = '🎉';
-                title = 'Good Job!';
-                message = 'Great effort! Keep practicing to improve.';
+                icon = '🎉'; title = 'Good Job!'; message = 'Great effort! Keep practicing to improve.';
             } else if (percentage >= 40) {
-                icon = '💪';
-                title = 'Keep Going!';
-                message = 'You\'re making progress. Review and try again!';
+                icon = '💪'; title = 'Keep Going!'; message = 'You\'re making progress. Review and try again!';
             } else {
-                icon = '📚';
-                title = 'Need Practice';
-                message = 'Don\'t give up! Review the material and try again.';
+                icon = '📚'; title = 'Need Practice'; message = 'Don\'t give up! Review the material and try again.';
             }
 
             document.getElementById('resultIcon').textContent = icon;
             document.getElementById('resultTitle').textContent = title;
             document.getElementById('resultMessage').textContent = message;
-
-            // Generate review
             generateReview();
         }
 
-        // Animate number
         function animateNumber(id, start, end, duration) {
             const el = document.getElementById(id);
             const range = end - start;
             const startTime = performance.now();
-            
             function update(currentTime) {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
@@ -2442,15 +2964,12 @@
                 el.textContent = value;
                 if (progress < 1) requestAnimationFrame(update);
             }
-            
             requestAnimationFrame(update);
         }
 
-        // Confetti
         function showConfetti() {
             const container = document.getElementById('confettiContainer');
             const colors = ['#6366f1', '#8b5cf6', '#a855f7', '#10b981', '#f59e0b', '#ef4444'];
-            
             for (let i = 0; i < 50; i++) {
                 setTimeout(() => {
                     const piece = document.createElement('div');
@@ -2460,19 +2979,16 @@
                     piece.style.animationDelay = Math.random() * 0.5 + 's';
                     piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
                     container.appendChild(piece);
-                    
                     setTimeout(() => piece.remove(), 3000);
                 }, i * 30);
             }
         }
 
-        // Generate review
         function generateReview() {
             const container = document.getElementById('reviewContent');
             container.innerHTML = state.questions.map((q, idx) => {
                 const answer = state.answers[idx];
                 const isCorrect = answer === q.correct;
-                
                 return `
                     <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
                         <div class="review-question">Q${idx + 1}: ${q.question}</div>
@@ -2482,16 +2998,13 @@
                             </span>
                             ${!isCorrect ? `<span class="review-answer correct-ans">Correct: ${q.options[q.correct]}</span>` : ''}
                         </div>
-                        <div class="review-explanation">
-                            ${q.explanation}
-                        </div>
+                        <div class="review-explanation">${q.explanation}</div>
                         <div class="review-urdu">📝 ${q.urdu}</div>
                     </div>
                 `;
             }).join('');
         }
 
-        // Toggle review
         function toggleReview() {
             const content = document.getElementById('reviewContent');
             const icon = document.getElementById('reviewIcon');
@@ -2499,23 +3012,22 @@
             icon.textContent = content.classList.contains('show') ? '▲' : '▼';
         }
 
-        // Restart quiz
         function restartQuiz() {
             startQuiz();
         }
 
-        // Go home
         function goHome() {
             state.selectedTopics = [];
             document.querySelectorAll('.topic-card').forEach(c => c.classList.remove('selected'));
-            
             document.getElementById('startScreen').classList.remove('hidden');
             document.getElementById('quizScreen').classList.add('hidden');
             document.getElementById('quizScreen').style.display = 'none';
             document.getElementById('resultScreen').classList.add('hidden');
             document.getElementById('resultScreen').style.display = 'none';
-            
+            document.getElementById('notesScreen').classList.add('hidden');
+            document.getElementById('notesScreen').style.display = 'none';
             updateStartBtn();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
